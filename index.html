@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Carbon Structural Design Lab — 전남대학교</title>
+<meta name="description" content="전남대학교 건축디자인학과 Zero Carbon Structural Design Lab (배재훈 교수) — 탄소중립 구조설계, 내진·제진, 강재 3D프린팅, 목재-강 하이브리드 구조 연구실">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   ★ 내용 데이터 — 홈페이지 내용은 여기만 수정하면 됩니다 ★
+   · 새 논문: pubsInt(국제) 또는 pubsDom(국내) 배열의 맨 위에 한 항목 복사-추가
+     → 번호·논문 수 통계가 자동으로 갱신됩니다 (최신순 정렬 유지)
+   · tag: "주저자" | "교신저자" | "단독저자" | "" (공동저자)
+   · note: "IN PRESS" 등 추가 뱃지 (없으면 "")
+   · 뉴스: news 배열 맨 위에 추가 / 구성원: people / 과제: projects
+   ═══════════════════════════════════════════════════════════════════ */
+window.LAB_DATA = {
+
+pubsInt: [
+ {title:"Generative Design of Additively Manufactured Steel Dampers Using a Feasible Geometry-Constrained VAE–GAN", tag:"교신저자", note:"IN PRESS",
+  authors:"J. Bang, S. Kim, S. Park, Y. Kim, <b>J. Bae*</b>, J. Doh", journal:"Journal of Computational Design and Engineering (2026, 게재확정) · Q1"},
+ {title:"Deep Learning-Based Prediction of the Hysteretic Behavior of Buckling-Restrained Braces for Seismic Design Using Analysis-of-Mean-Based Optimal Hyperparameters", tag:"교신저자", note:"",
+  authors:"K. Lim, E. Jeong, D.M. Osabel, Y.K. Ju, J. Doh, <b>J. Bae*</b>", journal:"Engineering Applications of Artificial Intelligence 171, 114315 (2026) · Q1 · IF 9.0 · Top 5%"},
+ {title:"Tailoring Viscoelastic Damping and Magnetic Response in High-Concentration PDMS–Ferrite Iron Magnetorheological Elastomer via Irregular Particle Morphology", tag:"", note:"",
+  authors:"V. Dhand, B. Kim, H. Jang, <b>J. Bae</b>, H. Shin, S. Kim", journal:"Journal of Materials Research and Technology (2026) · Q1 · IF 7.3"},
+ {title:"Enhanced Crow Search Algorithm Based on Space Hybridization of Adaptive Functions and Lévy Flight", tag:"교신저자", note:"",
+  authors:"Y. Lan, X. Huang, X. Hu, Z. Zhang, <b>J. Bae*</b>", journal:"International Journal of Computational Intelligence Systems 19(1) (2026)"},
+ {title:"State-of-the-Art Artificial Intelligence Techniques in Structural Engineering: A Review of Applications and Prospects", tag:"", note:"",
+  authors:"M.T. Aziz, D.M. Osabel, Y. Kim, S. Kim, <b>J. Bae</b>, K.D. Tsavdaridis", journal:"Results in Engineering, 107882 (2025) · Q1 · IF 9.4"},
+ {title:"Cyclic Loading Test of Phase Change Material (PCM)-Infilled Buckling-Restrained Brace", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, Y.K. Ju, J. Oh", journal:"International Journal of Civil Engineering 22(12), 2233–2249 (2024)"},
+ {title:"Influence of Calcination and Cation Exchange (APTES) of Bentonite-Modified Reinforced Basalt/Epoxy Multiscale Composites' Mechanical and Wear Performance", tag:"", note:"",
+  authors:"S. Khandelwal, V. Dhand, <b>J. Bae</b>, T. Kim, S. Kim", journal:"Materials 17(19), 4760 (2024)"},
+ {title:"Advanced Seismic Resilient Performance of Steel MRF Equipped with Viscoelastic Friction Dampers", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, X. Huang, Z. Zhang", journal:"Scientific Reports 14(1), 19403 (2024) · Q1"},
+ {title:"Implementation of a Gamification-Based Metaverse Exhibition: A Case Study of the Farewell Museum", tag:"", note:"",
+  authors:"J. Lee, <b>J. Bae</b>, Y. Bae", journal:"Sustainability 16(14), 6212 (2024)"},
+ {title:"Experimental Study of a Single-Layer Free-Form Envelope Node Under Axial Loadings", tag:"교신저자", note:"",
+  authors:"J. Oh, <b>J. Bae*</b>", journal:"International Journal of Civil Engineering 22(3), 421–433 (2024)"},
+ {title:"Improving the Seismic Performance of Tall Steel Buildings Using Advanced Visco-Plastic Braces", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, Y.J. Kim, C.H. Lee", journal:"International Journal of Steel Structures 22(6), 1658–1668 (2022)"},
+ {title:"Evaluation of Genetic Algorithms for Optimizing the Height-Wise Viscous Damper Distribution in Regular and Irregular Buildings", tag:"교신저자", note:"",
+  authors:"X. Huang, <b>J. Bae*</b>", journal:"Arabian Journal for Science and Engineering 47(10), 12945–12962 (2022)"},
+ {title:"Assessment of Concrete Macrocrack Depth Using Infrared Thermography", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, A. Jang, M.J. Park, J. Lee, Y.K. Ju", journal:"Steel and Composite Structures 43(4), 501–509 (2022)"},
+ {title:"SMART SKY Eye System for Preliminary Structural Safety Assessment of Buildings Using Unmanned Aerial Vehicles", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, J. Lee, A. Jang, Y.K. Ju, M.J. Park", journal:"Sensors 22(7), 2762 (2022)"},
+ {title:"Machine Learning-Based Concrete Crack Depth Prediction Using Thermal Images Taken under Daylight Conditions", tag:"", note:"",
+  authors:"M.J. Park, J. Kim, S. Jeong, A. Jang, <b>J. Bae</b>, Y.K. Ju", journal:"Remote Sensing 14(9), 2151 (2022)"},
+ {title:"Bond Behavior of Concrete-Filled Steel Tube Mega Columns with Different Connectors", tag:"", note:"",
+  authors:"R.W. Alemayehu, <b>J. Bae</b>, Y.K. Ju, M.J. Park", journal:"Materials 15(8), 2791 (2022)"},
+ {title:"Structural Behavior of a Composite Curtain Wall Fabricated by the Fused Deposition Modeling 3D Printing Method", tag:"", note:"",
+  authors:"M.J. Park, <b>J. Bae</b>, Y.K. Ju", journal:"Polymers 14(7), 1431 (2022)"},
+ {title:"An Innovative Shear Link as Damper: An Experimental and Numerical Study", tag:"교신저자", note:"",
+  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Steel and Composite Structures 42(4), 539–552 (2022)"},
+ {title:"Utilizing an I-Shaped Shear Link as a Damper to Improve the Behaviour of a Concentrically Braced Frame", tag:"교신저자", note:"",
+  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Journal of Constructional Steel Research 186, 106915 (2021)"},
+ {title:"Tapered Reduced Deep Beam Connection for Long Span Steel Moment Frames", tag:"", note:"",
+  authors:"R.W. Alemayehu, S. Jung, <b>J. Bae</b>, C.H. Lee, Y.K. Ju", journal:"Engineering Structures 244, 112731 (2021)"},
+ {title:"Seismic Reinforcement System of RC Structure Using Eccentric Brace Frame", tag:"", note:"",
+  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b>", journal:"International Journal of Civil Engineering 19(9), 1021–1042 (2021)"},
+ {title:"Current and New Approaches to Predict the Deflections of One-Way Flexural Members with a Focus on Composite Steel Deck Slabs Voided by Circular Tubes", tag:"", note:"",
+  authors:"C.H. Lee, I. Mansouri, <b>J. Bae</b>, J. Ryu", journal:"Materials 14(2), 421 (2021)"},
+ {title:"Modified Low-Cycle Fatigue Estimation Using Machine Learning for Radius-Cut Coke-Shaped Metallic Damper Subjected to Cyclic Loading", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1849–1858 (2020)"},
+ {title:"Fire Design Equation for Steel–Polymer Composite Floors in Thermal Fields via Finite Element Analysis", tag:"", note:"",
+  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"Materials 13(23), 5573 (2020)"},
+ {title:"The Pushout Test of Seismic Reinforcement System (SRM) Connection that Responds to Earthquake Extensive Level", tag:"", note:"",
+  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b>", journal:"International Journal of Civil Engineering 18(12), 1347–1363 (2020)"},
+ {title:"Fire Resistance of Hybrid Floor Based on Small-Scale Furnace Tests and Energy-Based Time Equivalent Approach", tag:"", note:"",
+  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1811–1821 (2020)"},
+ {title:"Cyclic Load Test and Finite Element Analysis of NOVEL Buckling-Restrained Brace", tag:"", note:"",
+  authors:"R.W. Alemayehu, Y. Kim, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(22), 5103 (2020)"},
+ {title:"Cyclic Loading Performance of Radius-Cut Double Coke-Shaped Strip Dampers", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y. Kim, Y.K. Ju", journal:"Materials 13(18), 3920 (2020)"},
+ {title:"Thermal Contact Conductance-Based Thermal Behavior Analytical Model for a Hybrid Floor at Elevated Temperatures", tag:"", note:"",
+  authors:"M.J. Park, J.K. Min, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(19), 4257 (2020)"},
+ {title:"Seismic Design and Assessment of Steel Frames with Visco-Plastic Dampers", tag:"주저자", note:"",
+  authors:"<b>J. Bae</b>, T.L. Karavasilis", journal:"International Journal of Earthquake and Impact Engineering 2(4), 282–297 (2018)"},
+ {title:"Experimental Study of Using Cantilever Type Steel Plates for Passive Energy Dissipation", tag:"", note:"",
+  authors:"Y.J. Kim, T.S. Ahn, <b>J.H. Bae</b>, S.H. Oh", journal:"International Journal of Steel Structures 16(3), 959–974 (2016)"},
+ {title:"Cyclic Loading Test of Wall Damping System with Steel Dampers", tag:"", note:"",
+  authors:"H.J. Ahn, Y.J. Kim, <b>J.H. Bae</b>, I.Y. Jung", journal:"Advances in Structural Engineering 19(8), 1262–1274 (2016)"}
+],
+
+pubsDom: [
+ {title:"3D 프린팅 기반 자기력 보조 경량 비좌굴가새 적용성 검증 연구", tag:"교신저자", note:"",
+  authors:"정은철, 김병현, 김영주, 김상훈, <b>배재훈*</b>", journal:"한국강구조학회 논문집 37(6), 417–426 (2025)"},
+ {title:"내진 성능을 고려한 비정형 강재 댐퍼의 딥러닝 기반 생성형 설계", tag:"", note:"",
+  authors:"방진홍, <b>배재훈</b>, 김상훈, 박상인, 김영주, 도재혁", journal:"한국강구조학회 논문집 37(5), 305–314 (2025)"},
+ {title:"유해화학물질 사외배관의 방호울타리 설치를 위한 방호성능 평가 연구", tag:"", note:"",
+  authors:"김강윤, 김선형, <b>배재훈</b>, 김상훈", journal:"한국강구조학회 논문집 37(1), 1–9 (2025)"},
+ {title:"콘크리트 구조물 균열 파악을 위한 분류 모델 분석", tag:"", note:"",
+  authors:"장현준, <b>배재훈</b>, 김상훈", journal:"신뢰성응용연구 24(4), 398–404 (2024)"},
+ {title:"Development of Tunnel Lining Crack Detection Device and Crack Detection for Smart Construction Diagnosis", tag:"교신저자", note:"",
+  authors:"W.Y. Kim, <b>J. Bae*</b>", journal:"대한건축학회 논문집 40(11), 225–232 (2024)"},
+ {title:"주기적 하중을 받는 탄소감축을 위한 조립 해체가 용이한 급속 시공 접합부(TZcon)의 수치해석 연구", tag:"교신저자", note:"",
+  authors:"오사벨 데이브, 최형진, 김상훈, 김영주, <b>배재훈*</b>", journal:"한국전산구조공학회 논문집 37(4), 275–282 (2024)"},
+ {title:"Finite Element Analysis of a Full-Scale, Rapid-Disassembly, Carbon-Minimized Dismantle Connection Subjected to Cyclic Loading", tag:"교신저자", note:"",
+  authors:"D.M. Osabel, H.J. Choi, S.H. Kim, Y.J. Kim, <b>J.H. Bae*</b>", journal:"한국전산구조공학회 논문집 37(4) (2024)"},
+ {title:"디지털 트윈에 기반한 Texture Mapping 최적화 연구", tag:"", note:"",
+  authors:"정은철, <b>배재훈</b>, 이병도, 배윤경, 김준택", journal:"차세대융합기술학회논문지 8(1), 41–50 (2024)"},
+ {title:"디지털 트윈을 활용한 META ISLAND 신뢰성 연구", tag:"교신저자", note:"",
+  authors:"정은철, 임승완, <b>배재훈*</b>", journal:"신뢰성응용연구 23(3), 297–304 (2023)"},
+ {title:"미래교육 시대 메타버스를 활용한 프로젝트 제시형 첨단융합 구조 교육 소개", tag:"단독저자", note:"",
+  authors:"<b>배재훈</b>", journal:"한국공간구조학회지 21(4), 4–9 (2021)"},
+ {title:"3D 프린터를 활용한 PLA 폴리머 Space Truss의 최적화", tag:"주저자", note:"",
+  authors:"<b>배재훈</b>, 장지우, 주영규", journal:"한국공간구조학회지 20(1), 61–67 (2020)"},
+ {title:"무인 항공기(UAV)와 AI 머신러닝기술을 활용한 구조물의 안전진단 기술 개발", tag:"주저자", note:"",
+  authors:"<b>배재훈</b>, 주영규", journal:"대한토목학회지 68(1), 20–27 (2020)"},
+ {title:"PCM을 충전한 이중강관형 좌굴방지가새 개발", tag:"", note:"",
+  authors:"홍석호, <b>배재훈</b>, 주영규", journal:"복합신소재구조학회지 11(2), 22–28 (2020)"},
+ {title:"드론 및 열화상을 활용한 구조물 재난 안전 평가 SMART SKY EYE 시스템", tag:"주저자", note:"",
+  authors:"<b>배재훈</b>, 이종훈, 장아름, 주영규", journal:"한국공간구조학회지 19(3), 4–8 (2019)"},
+ {title:"앵글을 전단연결재로 사용하는 합성보의 휨성능", tag:"", note:"",
+  authors:"김영주, <b>배재훈</b>, 안태상, 최종권", journal:"한국강구조학회 논문집 27(1), 63–75 (2015)"},
+ {title:"중력하중을 받는 SRC기둥–합성보 접합부 실험", tag:"", note:"",
+  authors:"김영주, <b>배재훈</b>, 안태상, 장성훈", journal:"한국강구조학회 논문집 26(5), 441–452 (2014)"},
+ {title:"SRC기둥–H형단면과 U형단면으로 구성된 합성보 접합부의 반복가력실험", tag:"", note:"",
+  authors:"김영주, <b>배재훈</b>, 안태상, 김진원, 유홍식", journal:"한국강구조학회 논문집 26(4), 263–275 (2014)"},
+ {title:"합성보에 적용된 앵글 전단연결재의 Push-out 실험", tag:"", note:"",
+  authors:"김영주, <b>배재훈</b>, 안태상, 장동운", journal:"한국강구조학회 논문집 26(3), 155–167 (2014)"},
+ {title:"초고층 다이아그리드 노드의 최적설계과정", tag:"", note:"",
+  authors:"김상대, <b>배재훈</b>, 주영규, 김영주, 김도현", journal:"한국강구조학회 논문집 23(2), 211–220 (2011)"},
+ {title:"초고층 다이아그리드 구조의 실험적 내진성능계수 평가", tag:"주저자", note:"",
+  authors:"<b>배재훈</b>, 주영규, 김영주, 김상대", journal:"한국강구조학회 논문집 22(1), 75–85 (2010)"}
+],
+
+books: [
+ {no:"근간", title:"충전형 합성강판전단벽 지침 (집필간사)", journal:"한국강구조학회 · 한국건축구조기술사회 (2026 발간 예정)", draft:true},
+ {title:"탄소중립 건축기준 2026 — 전 생애 주기 평가와 적용", journal:"2026"},
+ {title:"Proceedings of the 11th International Conference on Behaviour of Steel Structures in Seismic Areas", journal:"Springer Nature (2024)"},
+ {title:"메타 아일랜드 가상공간의 건축혁명", journal:"기문당 (2024)"},
+ {title:"탄소중립설계 예제집", journal:"기문당 (2023)"},
+ {title:"탄소중립설계 지침서", journal:"기문당 (2022)"}
+],
+
+people: [
+ {initial:"DO", photo:"dave-osabel", name:"Dave M. Osabel", role:"POSTDOCTORAL RESEARCHER",
+  ko:"해체형 접합부(TZcon) 수치해석 · AI 구조공학 리뷰", en:"Numerical analysis of demountable connections (TZcon) · AI in structural engineering review"},
+ {initial:"최", photo:"hyeongjin-choi", name:"최형진 HyeongJin Choi", role:"PH.D. STUDENT",
+  ko:"해체 용이 접합부·차세대 강구조 시스템 · 2026 대통령과학장학금 · 2026 강구조학회 우수학술발표상", en:"Demountable connections &amp; next-gen steel systems · 2026 Presidential Science Scholarship · 2026 KSSC Best Presentation Award"},
+ {initial:"김", photo:"daeun-kim", name:"김다은 DaEun Kim", role:"B.S. RESEARCHER",
+  ko:"학부 연구원", en:"Undergraduate researcher"},
+ {initial:"우", photo:"taeho-woo", name:"우태호 Taeho Woo", role:"B.S. RESEARCHER",
+  ko:"학부 연구원", en:"Undergraduate researcher"},
+ {initial:"범", photo:"munyoung-beom", name:"범문영 MunYoung Beom", role:"B.S. RESEARCHER",
+  ko:"학부 연구원", en:"Undergraduate researcher"}
+],
+
+alumni: [
+ {year:"2026.08", ko:"<b>Md Tarif Aziz</b> — M.S., 지속가능건축ICT융합학과 · 학위논문: Structural Crack Inspection of Concrete Surface using Autonomous Robotic System",
+  en:"<b>Md Tarif Aziz</b> — M.S., Sustainable Architecture ICT Convergence · Thesis: Structural Crack Inspection of Concrete Surface using Autonomous Robotic System"},
+ {year:"2025", ko:"<b>정은철 EunCheol Jeong</b> — M.S. · 한국연구재단 석사연구생 프로젝트 선정 · EAAI(2026)·강구조학회 논문집(2025) 논문 저자",
+  en:"<b>EunCheol Jeong</b> — M.S. · NRF Master's Research Fellowship · Author of EAAI (2026) &amp; KSSC Journal (2025) papers"}
+],
+
+projects: [
+ {id:"PJ.07", badge:"ONGOING", hot:true, photo:"pj07",
+  ko:{title:"VM-BRB — 자기력 Self-Centering 경량 BRB 시스템", meta:"HYUNDAI STEEL · KISEC · 2024 – 2026 (2차년도) · PI",
+      desc:"자기력 기반 잔류변형 저감(Self-Centering)과 경량 3D프린팅 모듈 교체형 구조를 결합한 고성능·고효율·고용량 3H-CORE BRB 개발. 도심 리모델링·수직증축 내진보강 표준 솔루션을 목표로 실험·인증 진행 중."},
+  en:{title:"VM-BRB — Magnetic Self-Centering Lightweight BRB System", meta:"",
+      desc:"High-performance 3H-CORE BRB combining magnetic self-centering with lightweight, replaceable 3D-printed modules — a standard seismic retrofit solution for urban remodeling and vertical extension. Testing and certification in progress."}},
+ {id:"PJ.08", badge:"ONGOING", hot:true, photo:"pj08",
+  ko:{title:"목조 Hybrid Deck Slab — Steel–Timber OSC 모듈", meta:"CNP DONGYANG · 2026 –",
+      desc:"OSC(Off-Site Construction) 공법에 강재–목재 하이브리드 구조(AISC DG37)를 접목한 경량 데크 슬래브·벽체 모듈 개발 및 구조설계. 경량화·탄소저감(LCA)·시공성 동시 달성."},
+  en:{title:"Timber Hybrid Deck Slab — Steel–Timber OSC Module", meta:"",
+      desc:"Lightweight hybrid deck slab and wall modules applying steel–timber composite structures (AISC DG37) to off-site construction — achieving weight reduction, carbon reduction (LCA), and constructability at once."}},
+ {id:"PJ.09", badge:"ONGOING", hot:true, photo:"pj09",
+  ko:{title:"충전형 합성강판전단벽 설계지침 개발", meta:"한국강구조학회 · 한국건축구조기술사회 · 2025 – 2026 · 집필간사",
+      desc:"더블스킨 플레이트 합성벽체의 설계·시공 지침 개발 학회 공동연구. 2026.06 본문 최종 검토 완료, 발간 준비 중."},
+  en:{title:"Concrete-Filled Composite Steel Plate Shear Wall Design Guideline", meta:"KSSC · KSEA · 2025 – 2026 · Executive Editor",
+      desc:"Joint society research developing design and construction guidelines for double-skin composite plate shear walls. Final review completed June 2026; publication in preparation."}},
+ {id:"PJ.03", badge:"NRF", hot:false, photo:"pj03",
+  ko:{title:"CNDC — 해체가 쉬운 보-기둥 접합 시스템", meta:"한국연구재단 (과기정통부) · 2022 – 2026 · 연구책임(단독)",
+      desc:"탄소중립 실현을 위한 해체·재조립형 접합 시스템. Zero Waste·부재 재사용·시공 안전성 향상."},
+  en:{title:"CNDC — Easy-to-Dismantle Beam–Column Connection System", meta:"National Research Foundation of Korea (MSIT) · 2022 – 2026 · PI (sole)",
+      desc:"Demountable, reassemblable connection systems for carbon neutrality — zero waste, member reuse, and improved construction safety."}},
+ {id:"PJ.02", badge:"", hot:false, photo:"pj02",
+  ko:{title:"H-3DPD — 강재 3D프린팅 제진 댐퍼", meta:"HYUNDAI STEEL · 2023 – 2025",
+      desc:"금속 적층제조와 AI 위상최적화를 활용한 내진 H-솔루션 개발. 생성형 설계(VAE–GAN) 연구로 확장."},
+  en:{title:"H-3DPD — Steel 3D-Printed Seismic Damper", meta:"",
+      desc:"Seismic H-solution using metal additive manufacturing and AI topology optimization, extended into generative design (VAE–GAN) research."}},
+ {id:"PJ.01", badge:"", hot:false, photo:"pj01",
+  ko:{title:"탄소중립 설계 및 탄소배출량 정량화", meta:"대한건축학회 · 한국강구조학회",
+      desc:"LCA 기반 내재탄소 정량화, 탄소중립설계 지침서·예제집 발간, 탄소중립 인증체계 고도화 연구(총괄책임)."},
+  en:{title:"Carbon-Neutral Design &amp; Embodied Carbon Quantification", meta:"AIK · KSSC",
+      desc:"LCA-based embodied-carbon quantification, publication of carbon-neutral design guidelines &amp; casebooks, and certification framework research (lead)."}},
+ {id:"PJ.05", badge:"", hot:false, photo:"pj05",
+  ko:{title:"디지털 트윈 — META ISLAND 프로젝트", meta:"국토교통부 (설계인력양성)",
+      desc:"디지털 트윈·메타버스 기반 가상 건축 플랫폼 구축 및 신뢰성 연구."},
+  en:{title:"Digital Twin — META ISLAND Project", meta:"Ministry of Land, Infrastructure and Transport",
+      desc:"Digital-twin and metaverse-based virtual architecture platform and reliability research."}},
+ {id:"PJ.06", badge:"", hot:false, photo:"pj06",
+  ko:{title:"구조 안전진단 자율주행 로봇", meta:"중소벤처기업부 (산학연 Collabo R&D)",
+      desc:"Smart Construction을 위한 터널 시공 진단 자율주행 로봇·균열 검출 장치 개발."},
+  en:{title:"Autonomous Robot for Structural Safety Diagnosis", meta:"Ministry of SMEs and Startups (Collabo R&D)",
+      desc:"Autonomous tunnel-inspection robots and crack-detection devices for smart construction."}}
+],
+
+/* 뉴스 항목에 쓸 수 있는 추가 필드:
+   link:"https://기사주소"  → 제목이 클릭 가능한 링크(↗)가 됩니다
+   photo:"파일명"           → images\news\파일명.jpg 사진이 본문 아래 표시됩니다 */
+news: [
+ {date:"2026.07", link:"https://today.jnu.ac.kr/WebApp/web/HOM/COM/Board/board.aspx?boardID=148&bbsMode=view&page=1&key=8736", photo:"choi-scholarship",
+  ko:{title:"최형진 박사과정생, 2026 대학원 대통령과학장학금 선정", desc:"한국장학재단 이공계 박사과정 전국 40명에 선정 — 건축구조 분야에서는 이례적인 성과. 건물의 재사용성을 높여 탄소저감을 실현하고 지진 안전성을 동시에 확보하는 차세대 건축구조 시스템을 연구하고 있습니다."},
+  en:{title:"HyeongJin Choi selected for the 2026 Presidential Science Scholarship (Ph.D.)", desc:"One of 40 STEM doctoral students nationwide (Korea Student Aid Foundation) — a rare selection in building structures. His research develops next-generation structural systems that enhance reusability for carbon reduction while securing seismic safety."}},
+ {date:"2026.07", link:"", photo:"aziz-thesis",
+  ko:{title:"Md Tarif Aziz 연구원, 석사학위논문 최종 심사 통과", desc:"자율주행 로봇·딥러닝 기반 콘크리트 균열 진단 연구로 2026년 8월 석사학위 취득 예정."},
+  en:{title:"Md Tarif Aziz passes final M.S. thesis defense", desc:"M.S. degree in August 2026 for research on autonomous robotic, deep-learning-based concrete crack inspection."}},
+ {date:"2026.06", ko:{title:"Journal of Computational Design and Engineering 논문 게재 확정", desc:"생성형 AI(VAE–GAN) 기반 3D프린팅 강재 댐퍼 설계 연구 (교신저자, Oxford Univ. Press, Q1)."},
+  en:{title:"Paper accepted in Journal of Computational Design and Engineering", desc:"Generative AI (VAE–GAN) design of 3D-printed steel dampers (corresponding author; Oxford Univ. Press, Q1)."}},
+ {date:"2026.06", ko:{title:"VM-BRB 2차년도 연구 Kick-off Meeting 개최", desc:"현대제철·한국건축구조연구원과 3H-CORE BRB 시스템 개발 2차년도 착수 (6.2)."},
+  en:{title:"VM-BRB Year-2 kick-off meeting held", desc:"Year 2 of the 3H-CORE BRB system launched with Hyundai Steel and KISEC (June 2)."}},
+ {date:"2026.06", ko:{title:"「충전형 합성강판전단벽 지침」 본문 최종 검토 완료", desc:"한국강구조학회·한국건축구조기술사회 공동 지침, 발간 준비 중 (집필간사)."},
+  en:{title:"Final review completed for the Composite Steel Plate Shear Wall Guideline", desc:"Joint KSSC–KSEA guideline heading to publication (executive editor)."}},
+ {date:"2026.06", ko:{title:"최형진 연구원, 한국강구조학회 학술대회 우수학술발표상 수상", desc:"해체가 용이한 H형강 보-HSS 기둥 접합부의 휨성능 연구."},
+  en:{title:"HyeongJin Choi wins Best Presentation Award at KSSC Conference", desc:"Flexural performance of demountable H-beam–HSS column connections."}},
+ {date:"2026.05", ko:{title:"EAAI 논문 게재 — BRB 이력거동 딥러닝 예측", desc:"Engineering Applications of Artificial Intelligence (Q1, IF 9.0, Top 5%), 정은철 연구원 참여."},
+  en:{title:"Paper published in EAAI — deep-learning prediction of BRB hysteresis", desc:"Engineering Applications of Artificial Intelligence (Q1, IF 9.0, Top 5%), with EunCheol Jeong."}},
+ {date:"2026.04", ko:{title:"배재훈 교수, 대한건축학회 학술상 수상", desc:"2026년 대한건축학회 정기총회."},
+  en:{title:"Prof. Bae receives the AIK Academic Award", desc:"2026 General Assembly, Architectural Institute of Korea."}},
+ {date:"2025.10", ko:{title:"대한건축학회 창립 80주년 기념대회 참가", desc:"최형진·정은철·Md Tarif Aziz 연구원 — 지속가능 설계·신재료·구조 성능 발표."},
+  en:{title:"AIK 80th Anniversary Conference participation", desc:"HyeongJin Choi, EunCheol Jeong, and Md Tarif Aziz presented on sustainable design, new materials, and structural performance."}},
+ {date:"2025.05", ko:{title:"배재훈 교수, 영국 IStructE '구조공학 교육 우수상' 한국 최초 수상", desc:"런던 시상식 참석. 지속가능 건축 구조공학 교육 공로."},
+  en:{title:"Prof. Bae wins IStructE Structural Engineering Education Award — first in Korea", desc:"Award ceremony in London; recognized for education in sustainable structural engineering."}},
+ {date:"2025", ko:{title:"Resilient Cities and Structures 편집위원 선임", desc:"Elsevier 발행 Q1 국제학술지."},
+  en:{title:"Appointed to the Editorial Board of Resilient Cities and Structures", desc:"Q1 international journal published by Elsevier."}}
+],
+
+/* 게재 저널 카드 — key는 표지 이미지 파일명 (images\journals\key.jpg), url은 저널 홈페이지 */
+journals: [
+ {key:"es", abbr:"ES", name:"Engineering Structures", meta:"ELSEVIER · Q1", url:"https://www.sciencedirect.com/journal/engineering-structures"},
+ {key:"jcsr", abbr:"JCSR", name:"Journal of Constructional Steel Research", meta:"ELSEVIER · Q1", url:"https://www.sciencedirect.com/journal/journal-of-constructional-steel-research"},
+ {key:"eaai", abbr:"EAAI", name:"Engineering Applications of Artificial Intelligence", meta:"ELSEVIER · Q1", url:"https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence"},
+ {key:"jcde", abbr:"JCDE", name:"Journal of Computational Design and Engineering", meta:"OXFORD UP · Q1", url:"https://academic.oup.com/jcde"},
+ {key:"rineng", abbr:"RE", name:"Results in Engineering", meta:"ELSEVIER · Q1", url:"https://www.sciencedirect.com/journal/results-in-engineering"},
+ {key:"jmrt", abbr:"JMRT", name:"Journal of Materials Research and Technology", meta:"ELSEVIER · Q1", url:"https://www.sciencedirect.com/journal/journal-of-materials-research-and-technology"},
+ {key:"srep", abbr:"SR", name:"Scientific Reports", meta:"NATURE PORTFOLIO · Q1", url:"https://www.nature.com/srep/"},
+ {key:"rcs", abbr:"RCS", name:"Resilient Cities and Structures", meta:"ELSEVIER · EDITORIAL BOARD", url:"https://www.sciencedirect.com/journal/resilient-cities-and-structures"},
+ {key:"ijss", abbr:"IJSS", name:"International Journal of Steel Structures", meta:"SPRINGER", url:"https://link.springer.com/journal/13296"},
+ {key:"ijce", abbr:"IJCE", name:"International Journal of Civil Engineering", meta:"SPRINGER", url:"https://link.springer.com/journal/40999"},
+ {key:"scs", abbr:"SCS", name:"Steel and Composite Structures", meta:"TECHNO-PRESS", url:"http://www.techno-press.org/?journal=scs"},
+ {key:"mdpi", abbr:"MDPI", name:"Materials · Sensors · Sustainability", meta:"MDPI", url:"https://www.mdpi.com/journal/materials"}
+]
+};
+/* ═══════════════ 내용 데이터 끝 — 아래는 디자인/코드 영역 ═══════════════ */
+</script>
+<style>
+  :root{
+    --paper:#f6f5f0; --panel:#fdfdfb; --ink:#191d1b; --sub:#5c645f;
+    --pine:#14523d; --moss:#2e8b64; --moss-soft:#e7efe9;
+    --steel:#5f6b72; --line:#dcdad2; --line-strong:#b9b7ad;
+    --shadow:0 10px 40px rgba(20,40,30,.08);
+  }
+  :root[data-theme="dark"]{
+    --paper:#0e1310; --panel:#151d18; --ink:#e5e4dc; --sub:#98a29b;
+    --pine:#5cb890; --moss:#4aa87e; --moss-soft:#1b2a22;
+    --steel:#8a969e; --line:#26302a; --line-strong:#3b473f;
+    --shadow:0 10px 40px rgba(0,0,0,.4);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0e1310; --panel:#151d18; --ink:#e5e4dc; --sub:#98a29b;
+      --pine:#5cb890; --moss:#4aa87e; --moss-soft:#1b2a22;
+      --steel:#8a969e; --line:#26302a; --line-strong:#3b473f;
+      --shadow:0 10px 40px rgba(0,0,0,.4);
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    font-family:"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+    font-size:15.5px;line-height:1.75;color:var(--ink);background:var(--paper);
+    font-variant-numeric:tabular-nums;
+  }
+  .en, h1,h2,.logo,.stat b{font-family:"Schibsted Grotesk","Noto Sans KR",sans-serif}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  a{color:inherit}
+  img{max-width:100%}
+
+  /* ── Nav ── */
+  nav.top{
+    position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;
+    padding:0 clamp(16px,4vw,48px);height:64px;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:15px;letter-spacing:.02em;text-decoration:none;white-space:nowrap}
+  .logo .mark{width:30px;height:30px;flex:none;position:relative}
+  .logo .mark svg{width:100%;height:100%;display:block}
+  .logo .mark .photo{object-fit:contain}
+  .logo .mark .photo ~ svg{display:none}
+  .logo small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:400;color:var(--sub);letter-spacing:.14em;line-height:1.2}
+  nav.top .links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav.top .links::-webkit-scrollbar, .tabs::-webkit-scrollbar, .hero .r3::-webkit-scrollbar{display:none}
+  .tabs, .hero .r3{scrollbar-width:none}
+  nav.top .links a{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;
+    color:var(--sub);text-decoration:none;padding:8px 12px;white-space:nowrap;border-bottom:2px solid transparent;
+  }
+  nav.top .links a:hover{color:var(--pine)}
+  nav.top .links a.on{color:var(--pine);border-bottom-color:var(--pine)}
+  #themeBtn{
+    margin-left:8px;flex:none;width:34px;height:34px;border:1px solid var(--line-strong);background:none;
+    cursor:pointer;color:var(--ink);font-size:14px;border-radius:50%;
+  }
+  #langBtn{
+    margin-left:6px;flex:none;height:34px;padding:0 12px;border:1px solid var(--line-strong);background:none;
+    cursor:pointer;color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;border-radius:17px;
+  }
+  #themeBtn:hover,#langBtn:hover{border-color:var(--pine);color:var(--pine)}
+  #langBtn:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+  #themeBtn:focus-visible, nav.top .links a:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+  @media (max-width:900px){
+    nav.top{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:0;column-gap:10px}
+    nav.top .links{order:3;flex-basis:100%;margin-left:0;flex-wrap:wrap}
+    nav.top .links a{padding:6px 10px}
+    #themeBtn{margin-left:auto}
+  }
+
+  /* ── Hero (photo, always dark) ── */
+  header.hero{
+    --h-ink:#f4f5f1; --h-sub:#c8cfc6; --h-acc:#8fdcb4; --h-line:rgba(244,245,241,.35);
+    position:relative;overflow:hidden;
+    padding:clamp(64px,12vh,130px) clamp(16px,4vw,48px) clamp(48px,9vh,100px);
+    border-bottom:1px solid var(--line);
+    background-color:#0d1512;
+    background-image:
+      linear-gradient(100deg, rgba(9,17,13,.92) 0%, rgba(9,17,13,.72) 46%, rgba(9,17,13,.42) 100%),
+      url("images/hero.jpg"),
+      url("https://images.unsplash.com/photo-1658818966033-25ad746b9dc4?auto=format&fit=crop&w=2000&q=80");
+    background-size:cover,cover,cover;
+    background-position:center,center,center 30%;
+  }
+  .hero-in{position:relative;max-width:1180px;margin:0 auto}
+  .hero .sheet{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.22em;color:var(--h-acc);margin-bottom:22px}
+  .hero h1{
+    font-size:clamp(40px,8.4vw,104px);font-weight:900;line-height:.98;letter-spacing:-.015em;text-wrap:balance;
+  }
+  .hero h1 .hollow{
+    color:transparent;-webkit-text-stroke:1.6px var(--h-acc);
+  }
+  .hero h1 .fill{color:var(--h-ink)}
+  .hero .tag{
+    max-width:620px;margin-top:28px;font-size:clamp(15px,1.8vw,17.5px);color:var(--h-sub);text-wrap:pretty;
+  }
+  .hero .tag b{color:var(--h-ink);font-weight:700}
+  .hero .r3{
+    display:flex;gap:0;margin-top:36px;border:1px solid var(--h-line);width:fit-content;max-width:100%;overflow-x:auto;
+    background:rgba(9,17,13,.35);backdrop-filter:blur(3px);
+  }
+  .hero .r3 div{padding:12px 22px;border-right:1px solid var(--h-line);white-space:nowrap}
+  .hero .r3 div:last-child{border-right:none}
+  .hero .r3 b{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--h-acc);letter-spacing:.1em;display:block}
+  .hero .r3 span{font-size:12.5px;color:var(--h-sub)}
+  .hero .credit{position:absolute;right:14px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;color:rgba(244,245,241,.4)}
+  .stats{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,64px);margin-top:52px}
+  .stat b{display:block;font-size:clamp(28px,3.6vw,44px);font-weight:900;color:var(--h-acc);line-height:1.1}
+  .stat span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--h-sub)}
+
+  /* ── Sections ── */
+  section.blk{padding:clamp(56px,9vh,110px) clamp(16px,4vw,48px);border-bottom:1px solid var(--line)}
+  section.blk.alt{background:var(--panel)}
+  .blk-in{max-width:1180px;margin:0 auto}
+  .sheetno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.22em;color:var(--pine)}
+  section.blk h2{font-size:clamp(26px,3.6vw,40px);font-weight:900;letter-spacing:-.01em;margin:8px 0 14px;text-wrap:balance}
+  .lead{max-width:680px;color:var(--sub);margin-bottom:40px;text-wrap:pretty}
+  .lead b{color:var(--ink)}
+
+  /* research cards */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .rcard{background:var(--panel);padding:26px 26px 30px;position:relative;transition:background .25s}
+  .rcard:hover{background:var(--moss-soft)}
+  .rcard .no{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--pine);letter-spacing:.14em}
+  .rcard h3{font-size:16.5px;font-weight:700;margin:10px 0 4px}
+  .rcard .en-t{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--sub);letter-spacing:.06em;display:block;margin-bottom:10px}
+  .rcard p{font-size:13.5px;color:var(--sub)}
+
+  /* professor */
+  .prof{display:grid;grid-template-columns:minmax(230px,300px) 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+  @media (max-width:760px){ .prof{grid-template-columns:1fr} }
+  .prof-card{border:1px solid var(--line-strong);background:var(--panel);padding:28px;position:sticky;top:84px}
+  .prof-card .ph{
+    aspect-ratio:1;background:linear-gradient(150deg,var(--moss-soft),transparent 70%),var(--paper);
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .prof-card .ph span{font-family:"Schibsted Grotesk",sans-serif;font-weight:900;font-size:44px;color:var(--pine);opacity:.5}
+  .prof-card h3{font-size:19px;font-weight:900}
+  .prof-card .role{font-size:12.5px;color:var(--sub);margin:2px 0 14px}
+  .prof-card dl{font-size:12.5px;border-top:1px solid var(--line);padding-top:12px}
+  .prof-card dt{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--pine);margin-top:10px}
+  .prof-card dd{color:var(--sub)}
+  .prof-card dd a{color:var(--moss);text-decoration:none;word-break:break-all}
+  .tl{border-left:2px solid var(--line-strong);padding-left:24px;margin:6px 0 34px}
+  .tl .row{position:relative;padding:7px 0;display:grid;grid-template-columns:130px 1fr;gap:14px;font-size:14px}
+  .tl .row::before{content:"";position:absolute;left:-29px;top:17px;width:8px;height:8px;background:var(--paper);border:2px solid var(--pine);border-radius:50%}
+  .tl .row .y{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--sub);padding-top:2px}
+  .tl .row b{font-weight:700}
+  .tl .row small{display:block;color:var(--sub);font-size:12.5px}
+  @media (max-width:560px){ .tl .row{grid-template-columns:1fr;gap:0} }
+  h3.subhead{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--pine);margin:34px 0 12px;text-transform:uppercase}
+  .awards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+  .aw{border:1px solid var(--line);background:var(--panel);padding:14px 16px;font-size:13px}
+  .aw .y{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--pine)}
+
+  /* people */
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+  .person{border:1px solid var(--line);background:var(--panel);padding:20px}
+  .person .avatar{
+    width:52px;height:52px;border-radius:50%;background:var(--moss-soft);border:1px solid var(--line-strong);
+    display:flex;align-items:center;justify-content:center;font-family:"Schibsted Grotesk",sans-serif;
+    font-weight:900;color:var(--pine);margin-bottom:12px;font-size:16px;
+  }
+  .avatar, .prof-card .ph{position:relative;overflow:hidden}
+  .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .labshot{border:1px solid var(--line-strong);background:var(--panel);padding:10px;margin-top:36px}
+  .labshot img{display:block;width:100%;max-height:460px;object-fit:cover}
+  .pjshot{margin-top:14px;border:1px solid var(--line)}
+  .pjshot img{display:block;width:100%;max-height:300px;object-fit:cover}
+  .newsshot{margin-top:10px;border:1px solid var(--line);max-width:560px}
+  .newsshot img{display:block;width:100%;max-height:260px;object-fit:cover}
+  .news h4 a{color:var(--pine);text-decoration:none}
+  .news h4 a:hover{text-decoration:underline}
+  /* 저널 카드 */
+  .jgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:8px}
+  .jcard{display:block;border:1px solid var(--line);background:var(--panel);text-decoration:none;padding:12px;transition:border-color .2s}
+  .jcard:hover{border-color:var(--pine)}
+  .jcard:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+  .jcover{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--moss-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .jcover span{font-family:"Schibsted Grotesk","Noto Sans KR",sans-serif;font-weight:900;font-size:24px;color:var(--pine);opacity:.55}
+  .jname{font-size:12.5px;font-weight:700;line-height:1.35;color:var(--ink)}
+  .jmeta{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--sub);margin-top:3px;letter-spacing:.04em}
+  .labshot figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;color:var(--sub);padding:10px 4px 2px}
+  .person h4{font-size:15px;font-weight:700;line-height:1.3}
+  .person .rr{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;color:var(--pine);margin:3px 0 6px}
+  .person p{font-size:12.5px;color:var(--sub)}
+  .alumni-list{margin-top:10px;border-top:1px solid var(--line)}
+  .alumni-list .row{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .alumni-list .row .y{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--sub)}
+  @media (max-width:560px){ .alumni-list .row{grid-template-columns:1fr;gap:0} }
+
+  /* projects */
+  .pj{border:1px solid var(--line);background:var(--panel);margin-bottom:12px;padding:24px 26px;display:grid;grid-template-columns:110px 1fr;gap:20px}
+  @media (max-width:640px){ .pj{grid-template-columns:1fr;gap:6px} }
+  .pj .no{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--pine);letter-spacing:.1em}
+  .pj h3{font-size:16.5px;font-weight:700;text-wrap:balance}
+  .pj .meta{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--sub);letter-spacing:.04em;margin:4px 0 8px}
+  .pj p{font-size:13.5px;color:var(--sub)}
+  .pj.hot{border-left:3px solid var(--pine)}
+  .badge{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;color:var(--pine);border:1px solid var(--pine);padding:1px 8px;margin-left:8px;vertical-align:2px}
+
+  /* publications */
+  .tabs{display:flex;gap:0;border:1px solid var(--line-strong);width:fit-content;margin-bottom:26px;max-width:100%;overflow-x:auto}
+  .tabs button{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;padding:10px 20px;
+    background:none;border:none;border-right:1px solid var(--line-strong);color:var(--sub);cursor:pointer;white-space:nowrap;
+  }
+  .tabs button:last-child{border-right:none}
+  .tabs button.on{background:var(--pine);color:var(--paper)}
+  .tabs button:focus-visible{outline:2px solid var(--moss);outline-offset:-2px}
+  .publist{display:none}
+  .publist.on{display:block}
+  .pub{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:13px 4px;border-bottom:1px solid var(--line);font-size:14px}
+  .pub .no{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--pine);padding-top:3px}
+  .pub .t{font-weight:500;text-wrap:pretty}
+  .pub .a{display:block;font-size:12.5px;color:var(--sub);margin-top:2px}
+  .pub .a b{color:var(--ink);font-weight:700}
+  .pub .a em{font-style:normal;color:var(--steel)}
+  .pub .a em::before{content:" — "}
+  .pubtag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;color:var(--pine);background:var(--moss-soft);border:1px solid var(--line-strong);padding:0 6px;margin-left:7px;vertical-align:1px;white-space:nowrap}
+  .morebtn{
+    margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+    background:none;border:1px solid var(--line-strong);color:var(--ink);padding:10px 26px;cursor:pointer;
+  }
+  .morebtn:hover{border-color:var(--pine);color:var(--pine)}
+  .hideable.folded .pub:nth-child(n+9){display:none}
+
+  /* news */
+  .news .row{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 4px;border-bottom:1px solid var(--line)}
+  @media (max-width:560px){ .news .row{grid-template-columns:1fr;gap:2px} }
+  .news .d{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--pine);padding-top:3px}
+  .news h4{font-size:15px;font-weight:700}
+  .news p{font-size:13.5px;color:var(--sub);margin-top:2px}
+
+  /* contact + footer */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .cbox{border:1px solid var(--line);background:var(--panel);padding:22px}
+  .cbox .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;color:var(--pine);margin-bottom:8px}
+  .cbox p{font-size:14px}
+  .cbox a{color:var(--moss);text-decoration:none;word-break:break-all}
+  footer{padding:34px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  footer .f-l{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--sub)}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .reveal.in{animation:rise .6s ease both}
+  /* 국·영문 병기 표시 */
+  .en-sub{display:block;font-size:12px;line-height:1.55;color:var(--steel);margin-top:3px;font-weight:400;letter-spacing:0}
+  .en-sub b{font-weight:600}
+  .hero .en-sub{color:rgba(200,207,198,.82)}
+  .r3 .en-sub{font-size:10.5px;margin-top:1px}
+  h3 .en-sub, h4 .en-sub{font-size:11.5px}
+  .aw .en-sub{font-size:11.5px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="logo" href="#top">
+    <span class="mark" aria-hidden="true" data-photo="images/logo" data-alt="">
+      <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.5" y="1.5" width="27" height="27" stroke="var(--pine)" stroke-width="2.4"/>
+        <path d="M1.5 28.5 L28.5 1.5 M1.5 1.5 L15 15 M15 15 L28.5 28.5" stroke="var(--pine)" stroke-width="1.6"/>
+      </svg>
+    </span>
+    <span>ZCSD LAB<small>ZERO CARBON · CHONNAM NAT'L UNIV.</small></span>
+  </a>
+  <div class="links">
+    <a href="#about">ABOUT</a>
+    <a href="#professor">PROFESSOR</a>
+    <a href="#people">PEOPLE</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#publications">PUBLICATIONS</a>
+    <a href="#news">NEWS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <button id="langBtn" aria-label="Switch language">EN</button>
+  <button id="themeBtn" aria-label="테마 전환">◐</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-in">
+    <div class="sheet">SHEET S-00 · ZERO CARBON STRUCTURAL DESIGN LAB</div>
+    <h1><span class="hollow">ZERO CARBON</span><br><span class="fill">STRUCTURAL<br>DESIGN LAB</span></h1>
+    <p class="tag" data-en="The <b>Zero Carbon Structural Design Lab</b> at Chonnam National University pursues structural engineering research for carbon-neutral architecture — from carbon reduction at the structural stage to member reuse and material recycling, we design the largest reduction a structure can make.">전남대학교 건축디자인학과 <b>탄소중립 구조설계 연구실</b>은 건축의 탄소중립 실현을 위한
+    구조공학 연구를 수행합니다. 구조 단계의 감축에서 부재 재사용, 재료 리사이클까지 —
+    구조가 할 수 있는 가장 큰 감축을 설계합니다.</p>
+    <div class="r3" role="list">
+      <div role="listitem"><b>R1 — REDUCE</b><span data-en="Carbon reduction at the structural stage">구조 단계에서의 탄소 감축</span></div>
+      <div role="listitem"><b>R2 — REUSE</b><span data-en="Demountable &amp; reusable members">해체·재조립 가능한 부재 재사용</span></div>
+      <div role="listitem"><b>R3 — RECYCLE</b><span data-en="Material recycling &amp; circular structures">재료 리사이클과 순환 구조</span></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="statInt">32</b><span>SCI/E PAPERS</span></div>
+      <div class="stat"><b id="statDom">20</b><span>KCI PAPERS</span></div>
+      <div class="stat"><b id="statBook">5</b><span>BOOKS</span></div>
+      <div class="stat"><b id="statPj">8+</b><span>PROJECTS</span></div>
+    </div>
+  </div>
+  <span class="credit">PHOTO · 30 ST MARY AXE, LONDON (UNSPLASH)</span>
+</header>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section class="blk" id="about">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-01 · RESEARCH AREAS</div>
+    <h2 class="reveal">About Us</h2>
+    <p class="lead reveal" data-en="Centered on <b>steel structures</b>, we research next-generation building-structure technologies that fuse AI and sustainable design — circular-economy-based steel systems that enhance building reusability for carbon reduction while securing seismic safety, pursued through international joint research and industry collaboration. Our field lies at the intersection of <b>structural engineering × carbon neutrality × digital technology</b>."><b>강구조를 중심으로</b> AI와 지속가능 설계를 융합한 차세대 건축구조 기술을 연구합니다.
+    건물의 재사용성을 높여 탄소저감을 실현하고 지진 안전성을 동시에 확보하는 순환경제 기반의
+    차세대 강구조 시스템을 개발하며, 국제공동연구와 산학협력을 활발히 추진하고 있습니다.
+    <b>구조공학 × 탄소중립 × 디지털 기술</b>의 교차점이 우리의 연구 영역입니다.</p>
+    <div class="grid3 reveal">
+      <div class="rcard"><span class="no">R-01</span><h3 data-en="Carbon Neutral Design">탄소중립 설계</h3><span class="en-t">CARBON NEUTRAL DESIGN · LCA</span><p data-en="LCA-based embodied-carbon quantification, carbon-neutral design guidelines &amp; casebooks, certification framework research">전 생애 주기 평가(LCA) 기반 내재탄소 정량화, 탄소중립설계 지침·예제집 발간, 탄소중립 인증체계 연구</p></div>
+      <div class="rcard"><span class="no">R-02</span><h3 data-en="Steel 3D-Printed Dampers">강재 3D프린팅 댐퍼</h3><span class="en-t">STEEL 3DP SEISMIC DAMPER</span><p data-en="Next-generation seismic dampers combining metal additive manufacturing with AI topology optimization and generative design (VAE–GAN)">금속 적층제조와 AI 위상최적화·생성형 설계(VAE–GAN)를 결합한 차세대 제진 댐퍼 개발</p></div>
+      <div class="rcard"><span class="no">R-03</span><h3 data-en="Demountable Connections">해체 가능 접합 시스템</h3><span class="en-t">CNDC · DEMOUNTABLE CONNECTION</span><p data-en="Easy-to-dismantle beam–column connections (CNDC·TZcon) for carbon neutrality — zero waste and member reuse">탄소중립 실현을 위한 해체·재조립이 쉬운 보-기둥 접합(CNDC·TZcon) — Zero Waste, 부재 재사용</p></div>
+      <div class="rcard"><span class="no">R-04</span><h3 data-en="Steel–Timber Hybrid">목재–강재 하이브리드</h3><span class="en-t">STEEL–TIMBER COMPOSITE</span><p data-en="Steel–CLT hybrid floor systems, timber hybrid deck slabs for OSC, and demountable STC structures">Steel–CLT 하이브리드 바닥 시스템, OSC 공법 적용 목조 Hybrid Deck Slab, Demountable STC 구조</p></div>
+      <div class="rcard"><span class="no">R-05</span><h3 data-en="Advanced Seismic Systems">차세대 내진·제진 시스템</h3><span class="en-t">SEISMIC RESILIENCE · VM-BRB</span><p data-en="Magnetic self-centering lightweight BRB (VM-BRB), viscoelastic &amp; friction dampers, standard retrofit solutions for remodeling">자기력 Self-Centering 경량 BRB(VM-BRB), 점탄성·마찰 댐퍼, 리모델링 내진보강 표준 솔루션</p></div>
+      <div class="rcard"><span class="no">R-06</span><h3 data-en="AI &amp; Robotic Diagnostics">AI·로봇 구조 진단</h3><span class="en-t">SHM · ROBOTICS · DIGITAL TWIN</span><p data-en="Structural safety assessment with autonomous robots, drones, and deep learning (SMART SKY EYE); digital-twin &amp; metaverse platforms">자율주행 로봇·드론·딥러닝 기반 구조 안전진단(SMART SKY EYE), 디지털 트윈·메타버스 구조 플랫폼</p></div>
+    </div>
+    <figure class="labshot" data-photo="images/lab" data-alt="연구실 단체 사진" hidden>
+      <figcaption>ZERO CARBON STRUCTURAL DESIGN LAB · CHONNAM NATIONAL UNIVERSITY</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════ PROFESSOR ═══════ -->
+<section class="blk alt" id="professor">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-02 · PRINCIPAL INVESTIGATOR</div>
+    <h2 class="reveal">Professor</h2>
+    <div class="prof">
+      <aside class="prof-card reveal">
+        <div class="ph" data-photo="images/professor" data-alt="배재훈 교수"><span>JB</span></div>
+        <h3>배재훈 <span class="en" style="font-weight:400;font-size:13px">Jaehoon BAE</span></h3>
+        <div class="role" data-en="Ph.D. · Associate Professor<br>Dept. of Architecture Design, Chonnam National University">Ph.D. · 부교수 (Associate Professor)<br>전남대학교 건축디자인학과</div>
+        <dl>
+          <dt>FIELD</dt><dd data-en="Building structures · Seismic design · Steel structures · Carbon-neutral structural systems">건축구조 · 내진/제진설계 · 강구조 · 탄소중립 구조시스템</dd>
+          <dt>EMAIL</dt><dd><a href="mailto:skycity-bjh@jnu.ac.kr">skycity-bjh@jnu.ac.kr</a></dd>
+          <dt>OFFICE</dt><dd>061-659-7338</dd>
+        </dl>
+      </aside>
+      <div>
+        <h3 class="subhead reveal">Education</h3>
+        <div class="tl reveal">
+          <div class="row"><span class="y">2019</span><span data-en="<b>University of Warwick, U.K.</b><small>Ph.D. in Civil Engineering (Structure) · Seismic damping design</small>"><b>University of Warwick, U.K.</b><small>Ph.D. in Civil Engineering (Structure) · 제진설계</small></span></div>
+          <div class="row"><span class="y">2010</span><span data-en="<b>Korea University</b><small>M.S. in Architectural Engineering · Steel structures &amp; seismic design</small>"><b>고려대학교</b><small>공학석사 · 건축구조 (강구조·내진설계)</small></span></div>
+          <div class="row"><span class="y">2007</span><span data-en="<b>Inha University</b><small>B.S. in Architecture</small>"><b>인하대학교</b><small>공학사 · 건축학</small></span></div>
+        </div>
+        <h3 class="subhead reveal">Experience</h3>
+        <div class="tl reveal">
+          <div class="row"><span class="y" data-en="2021 – Now">2021 – 현재</span><span data-en="<b>Chonnam National University</b><small>Associate Professor, Dept. of Architecture Design</small>"><b>전남대학교 건축디자인학과</b><small>부교수</small></span></div>
+          <div class="row"><span class="y">2019 – 2021</span><span data-en="<b>Korea University Building Forensics Center</b><small>Research Professor (Lab Director)</small>"><b>고려대학교 Building Forensics Center</b><small>연구교수 (연구실장)</small></span></div>
+          <div class="row"><span class="y">2018</span><span data-en="<b>Tokyo Institute of Technology</b><small>Visiting Researcher</small>"><b>Tokyo Institute of Technology</b><small>교환연구자</small></span></div>
+          <div class="row"><span class="y">2012 – 2015</span><span data-en="<b>DRB Holding Co., Ltd.</b><small>Senior Researcher</small>"><b>DRB Holding Co., Ltd.</b><small>선임연구원</small></span></div>
+          <div class="row"><span class="y">2009 – 2012</span><span data-en="<b>DongYang Structural Engineers</b><small>Structural Design Engineer</small>"><b>DongYang Structural Engineers</b><small>구조설계 엔지니어</small></span></div>
+          <div class="row"><span class="y">2009</span><span data-en="<b>OVE ARUP</b><small>Intern</small>"><b>OVE ARUP</b><small>인턴</small></span></div>
+        </div>
+        <h3 class="subhead reveal">Honors &amp; Service</h3>
+        <div class="awards reveal">
+          <div class="aw" data-en="<span class='y'>2026</span> Academic Award, Architectural Institute of Korea"><span class="y">2026</span> 대한건축학회 학술상</div>
+          <div class="aw" data-en="<span class='y'>2026</span> Best Paper Presentation Award, KSSC"><span class="y">2026</span> 한국강구조학회 우수논문 발표상</div>
+          <div class="aw" data-en="<span class='y'>2025</span> IStructE Structural Engineering Education Award, U.K. (first in Korea)"><span class="y">2025</span> 영국 IStructE 구조공학 교육 우수상 (한국 최초)</div>
+          <div class="aw" data-en="<span class='y'>2023</span> HYUNDAI STEEL–KSSC Award (Best Paper)"><span class="y">2023</span> HYUNDAI STEEL–KSSC Award 우수논문</div>
+          <div class="aw" data-en="<span class='y'>2027</span> Secretary General (LOC), ISSS 2027 Jeju"><span class="y">2027</span> ISSS 2027 (Jeju) 조직위 총괄간사</div>
+          <div class="aw" data-en="<span class='y'>Now</span> Editorial Board, Resilient Cities and Structures (Q1)"><span class="y">현재</span> Resilient Cities and Structures (Q1) 편집위원</div>
+          <div class="aw" data-en="<span class='y'>2024–26</span> Deputy Director, AIK Seismic-Carbon Center"><span class="y">2024–26</span> 대한건축학회 내진탄소센터 부센터장</div>
+          <div class="aw" data-en="<span class='y'>2025–</span> Executive Editor, Concrete-Filled Composite Steel Plate Shear Wall Guideline"><span class="y">2025–</span> 「충전형 합성강판전단벽 지침」 집필간사</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PEOPLE ═══════ -->
+<section class="blk" id="people">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-03 · MEMBERS</div>
+    <h2 class="reveal">People</h2>
+    <p class="lead reveal" data-en="Our researchers come from structural engineering, mechanical engineering, and ICT convergence backgrounds.">구조공학, 기계공학, ICT 융합 전공의 연구원들이 함께합니다.</p>
+    <div class="pgrid reveal">
+      <div class="person"><div class="avatar" data-photo="images/people/dave-osabel" data-alt="Dave M. Osabel">DO</div><h4>Dave M. Osabel</h4><div class="rr">POSTDOCTORAL RESEARCHER</div><p data-en="Numerical analysis of demountable connections (TZcon) · AI in structural engineering review">해체형 접합부(TZcon) 수치해석 · AI 구조공학 리뷰</p></div>
+      <div class="person"><div class="avatar" data-photo="images/people/hyeongjin-choi" data-alt="최형진">최</div><h4>최형진 HyeongJin Choi</h4><div class="rr">M.S. RESEARCHER</div><p data-en="Demountable H-beam–HSS column connections · 2026 KSSC Best Presentation Award">해체 용이 H형강 보-HSS 기둥 접합부 · 2026 강구조학회 우수학술발표상</p></div>
+      <div class="person"><div class="avatar" data-photo="images/people/daeun-kim" data-alt="김다은">김</div><h4>김다은 DaEun Kim</h4><div class="rr">B.S. RESEARCHER</div><p data-en="Undergraduate researcher">학부 연구원</p></div>
+      <div class="person"><div class="avatar" data-photo="images/people/taeho-woo" data-alt="우태호">우</div><h4>우태호 Taeho Woo</h4><div class="rr">B.S. RESEARCHER</div><p data-en="Undergraduate researcher">학부 연구원</p></div>
+      <div class="person"><div class="avatar" data-photo="images/people/munyoung-beom" data-alt="범문영">범</div><h4>범문영 MunYoung Beom</h4><div class="rr">B.S. RESEARCHER</div><p data-en="Undergraduate researcher">학부 연구원</p></div>
+    </div>
+    <h3 class="subhead reveal">Alumni</h3>
+    <div class="alumni-list reveal">
+      <div class="row"><span class="y">2026.08</span><span data-en="<b>Md Tarif Aziz</b> — M.S., Sustainable Architecture ICT Convergence · Thesis: Structural Crack Inspection of Concrete Surface using Autonomous Robotic System"><b>Md Tarif Aziz</b> — M.S., 지속가능건축ICT융합학과 · 학위논문: Structural Crack Inspection of Concrete Surface using Autonomous Robotic System</span></div>
+      <div class="row"><span class="y">2025</span><span data-en="<b>EunCheol Jeong</b> — M.S. · NRF Master's Research Fellowship · Author of EAAI (2026) &amp; KSSC Journal (2025) papers"><b>정은철 EunCheol Jeong</b> — M.S. · 한국연구재단 석사연구생 프로젝트 선정 · EAAI(2026)·강구조학회 논문집(2025) 논문 저자</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROJECTS ═══════ -->
+<section class="blk alt" id="projects">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-04 · RESEARCH PROJECTS</div>
+    <h2 class="reveal">Projects</h2>
+    <p class="lead reveal" data-en="Major research projects with the National Research Foundation of Korea, Hyundai Steel, the Ministry of SMEs and Startups, academic societies, and industry partners.">한국연구재단·현대제철·중소벤처기업부·학회 및 산업체와 함께 진행 중인 주요 연구과제입니다.</p>
+
+    <div class="pj hot reveal"><div><span class="no">PJ.07</span><span class="badge">ONGOING</span></div>
+      <div><h3 data-en="VM-BRB — Magnetic Self-Centering Lightweight BRB System">VM-BRB — 자기력 Self-Centering 경량 BRB 시스템</h3>
+      <div class="meta">HYUNDAI STEEL · KISEC · 2024 – 2026 (2차년도) · PI</div>
+      <p data-en="High-performance 3H-CORE BRB combining magnetic self-centering with lightweight, replaceable 3D-printed modules — a standard seismic retrofit solution for urban remodeling and vertical extension. Testing and certification in progress.">자기력 기반 잔류변형 저감(Self-Centering)과 경량 3D프린팅 모듈 교체형 구조를 결합한 고성능·고효율·고용량 3H-CORE BRB 개발. 도심 리모델링·수직증축 내진보강 표준 솔루션을 목표로 실험·인증 진행 중.</p>
+      <div class="pjshot" data-photo="images/projects/pj07" data-alt="VM-BRB 프로젝트" hidden></div></div></div>
+
+    <div class="pj hot reveal"><div><span class="no">PJ.08</span><span class="badge">ONGOING</span></div>
+      <div><h3 data-en="Timber Hybrid Deck Slab — Steel–Timber OSC Module">목조 Hybrid Deck Slab — Steel–Timber OSC 모듈</h3>
+      <div class="meta">CNP DONGYANG · 2026 –</div>
+      <p data-en="Lightweight hybrid deck slab and wall modules applying steel–timber composite structures (AISC DG37) to off-site construction — achieving weight reduction, carbon reduction (LCA), and constructability at once.">OSC(Off-Site Construction) 공법에 강재–목재 하이브리드 구조(AISC DG37)를 접목한 경량 데크 슬래브·벽체 모듈 개발 및 구조설계. 경량화·탄소저감(LCA)·시공성 동시 달성.</p>
+      <div class="pjshot" data-photo="images/projects/pj08" data-alt="목조 Hybrid Deck Slab 프로젝트" hidden></div></div></div>
+
+    <div class="pj hot reveal"><div><span class="no">PJ.09</span><span class="badge">ONGOING</span></div>
+      <div><h3 data-en="Concrete-Filled Composite Steel Plate Shear Wall Design Guideline">충전형 합성강판전단벽 설계지침 개발</h3>
+      <div class="meta" data-en="KSSC · KSEA · 2025 – 2026 · Executive Editor">한국강구조학회 · 한국건축구조기술사회 · 2025 – 2026 · 집필간사</div>
+      <p data-en="Joint society research developing design and construction guidelines for double-skin composite plate shear walls. Final review completed June 2026; publication in preparation.">더블스킨 플레이트 합성벽체의 설계·시공 지침 개발 학회 공동연구. 2026.06 본문 최종 검토 완료, 발간 준비 중.</p>
+      <div class="pjshot" data-photo="images/projects/pj09" data-alt="충전형 합성강판전단벽 지침" hidden></div></div></div>
+
+    <div class="pj reveal"><div><span class="no">PJ.03</span><span class="badge">NRF</span></div>
+      <div><h3 data-en="CNDC — Easy-to-Dismantle Beam–Column Connection System">CNDC — 해체가 쉬운 보-기둥 접합 시스템</h3>
+      <div class="meta" data-en="National Research Foundation of Korea (MSIT) · 2022 – 2026 · PI (sole)">한국연구재단 (과기정통부) · 2022 – 2026 · 연구책임(단독)</div>
+      <p data-en="Demountable, reassemblable connection systems for carbon neutrality — zero waste, member reuse, and improved construction safety.">탄소중립 실현을 위한 해체·재조립형 접합 시스템. Zero Waste·부재 재사용·시공 안전성 향상.</p>
+      <div class="pjshot" data-photo="images/projects/pj03" data-alt="CNDC 프로젝트" hidden></div></div></div>
+
+    <div class="pj reveal"><div><span class="no">PJ.02</span></div>
+      <div><h3 data-en="H-3DPD — Steel 3D-Printed Seismic Damper">H-3DPD — 강재 3D프린팅 제진 댐퍼</h3>
+      <div class="meta">HYUNDAI STEEL · 2023 – 2025</div>
+      <p data-en="Seismic H-solution using metal additive manufacturing and AI topology optimization, extended into generative design (VAE–GAN) research.">금속 적층제조와 AI 위상최적화를 활용한 내진 H-솔루션 개발. 생성형 설계(VAE–GAN) 연구로 확장.</p>
+      <div class="pjshot" data-photo="images/projects/pj02" data-alt="H-3DPD 프로젝트" hidden></div></div></div>
+
+    <div class="pj reveal"><div><span class="no">PJ.01</span></div>
+      <div><h3 data-en="Carbon-Neutral Design &amp; Embodied Carbon Quantification">탄소중립 설계 및 탄소배출량 정량화</h3>
+      <div class="meta" data-en="AIK · KSSC">대한건축학회 · 한국강구조학회</div>
+      <p data-en="LCA-based embodied-carbon quantification, publication of carbon-neutral design guidelines &amp; casebooks, and certification framework research (lead).">LCA 기반 내재탄소 정량화, 탄소중립설계 지침서·예제집 발간, 탄소중립 인증체계 고도화 연구(총괄책임).</p>
+      <div class="pjshot" data-photo="images/projects/pj01" data-alt="탄소중립 설계 프로젝트" hidden></div></div></div>
+
+    <div class="pj reveal"><div><span class="no">PJ.05</span></div>
+      <div><h3 data-en="Digital Twin — META ISLAND Project">디지털 트윈 — META ISLAND 프로젝트</h3>
+      <div class="meta" data-en="Ministry of Land, Infrastructure and Transport">국토교통부 (설계인력양성)</div>
+      <p data-en="Digital-twin and metaverse-based virtual architecture platform and reliability research.">디지털 트윈·메타버스 기반 가상 건축 플랫폼 구축 및 신뢰성 연구.</p>
+      <div class="pjshot" data-photo="images/projects/pj05" data-alt="META ISLAND 프로젝트" hidden></div></div></div>
+
+    <div class="pj reveal"><div><span class="no">PJ.06</span></div>
+      <div><h3 data-en="Autonomous Robot for Structural Safety Diagnosis">구조 안전진단 자율주행 로봇</h3>
+      <div class="meta" data-en="Ministry of SMEs and Startups (Collabo R&amp;D)">중소벤처기업부 (산학연 Collabo R&amp;D)</div>
+      <p data-en="Autonomous tunnel-inspection robots and crack-detection devices for smart construction.">Smart Construction을 위한 터널 시공 진단 자율주행 로봇·균열 검출 장치 개발.</p>
+      <div class="pjshot" data-photo="images/projects/pj06" data-alt="안전진단 로봇 프로젝트" hidden></div></div></div>
+  </div>
+</section>
+
+<!-- ═══════ PUBLICATIONS ═══════ -->
+<section class="blk" id="publications">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-05 · PUBLICATIONS</div>
+    <h2 class="reveal">Publications</h2>
+    <p class="lead reveal" id="pubLead" data-en="32 SCI/E papers (incl. in-press, 14 as first author) · 20 KCI papers · 5 books. <b>Bold</b> = Prof. Jaehoon Bae, * = corresponding author.">국제 SCI/E 32편(게재확정 포함, 주저자 14편) · 국내 학술지 20편 · 저서 5권. <b>굵은 글씨</b>는 배재훈 교수, *는 교신저자입니다.</p>
+    <div class="tabs reveal" role="tablist">
+      <button class="on" data-tab="pl-int" role="tab" aria-selected="true">INTERNATIONAL (32)</button>
+      <button data-tab="pl-dom" role="tab" aria-selected="false">DOMESTIC (20)</button>
+      <button data-tab="pl-book" role="tab" aria-selected="false">BOOKS (5)</button>
+    </div>
+
+    <div class="publist on hideable folded" id="pl-int">
+      <div class="pub"><span class="no">[01]</span><div class="t">Generative Design of Additively Manufactured Steel Dampers Using a Feasible Geometry-Constrained VAE–GAN<span class="pubtag">교신저자</span><span class="pubtag">IN PRESS</span><span class="a">J. Bang, S. Kim, S. Park, Y. Kim, <b>J. Bae*</b>, J. Doh<em>Journal of Computational Design and Engineering (2026, 게재확정) · Q1</em></span></div></div>
+      <div class="pub"><span class="no">[02]</span><div class="t">Deep Learning-Based Prediction of the Hysteretic Behavior of Buckling-Restrained Braces for Seismic Design Using Analysis-of-Mean-Based Optimal Hyperparameters<span class="pubtag">교신저자</span><span class="a">K. Lim, E. Jeong, D.M. Osabel, Y.K. Ju, J. Doh, <b>J. Bae*</b><em>Engineering Applications of Artificial Intelligence 171, 114315 (2026) · Q1 · IF 9.0 · Top 5%</em></span></div></div>
+      <div class="pub"><span class="no">[03]</span><div class="t">Tailoring Viscoelastic Damping and Magnetic Response in High-Concentration PDMS–Ferrite Iron Magnetorheological Elastomer via Irregular Particle Morphology<span class="a">V. Dhand, B. Kim, H. Jang, <b>J. Bae</b>, H. Shin, S. Kim<em>Journal of Materials Research and Technology (2026) · Q1 · IF 7.3</em></span></div></div>
+      <div class="pub"><span class="no">[04]</span><div class="t">Enhanced Crow Search Algorithm Based on Space Hybridization of Adaptive Functions and Lévy Flight<span class="pubtag">교신저자</span><span class="a">Y. Lan, X. Huang, X. Hu, Z. Zhang, <b>J. Bae*</b><em>International Journal of Computational Intelligence Systems 19(1) (2026)</em></span></div></div>
+      <div class="pub"><span class="no">[05]</span><div class="t">State-of-the-Art Artificial Intelligence Techniques in Structural Engineering: A Review of Applications and Prospects<span class="a">M.T. Aziz, D.M. Osabel, Y. Kim, S. Kim, <b>J. Bae</b>, K.D. Tsavdaridis<em>Results in Engineering, 107882 (2025) · Q1 · IF 9.4</em></span></div></div>
+      <div class="pub"><span class="no">[06]</span><div class="t">Cyclic Loading Test of Phase Change Material (PCM)-Infilled Buckling-Restrained Brace<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, Y.K. Ju, J. Oh<em>International Journal of Civil Engineering 22(12), 2233–2249 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[07]</span><div class="t">Influence of Calcination and Cation Exchange (APTES) of Bentonite-Modified Reinforced Basalt/Epoxy Multiscale Composites' Mechanical and Wear Performance<span class="a">S. Khandelwal, V. Dhand, <b>J. Bae</b>, T. Kim, S. Kim<em>Materials 17(19), 4760 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[08]</span><div class="t">Advanced Seismic Resilient Performance of Steel MRF Equipped with Viscoelastic Friction Dampers<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, X. Huang, Z. Zhang<em>Scientific Reports 14(1), 19403 (2024) · Q1</em></span></div></div>
+      <div class="pub"><span class="no">[09]</span><div class="t">Implementation of a Gamification-Based Metaverse Exhibition: A Case Study of the Farewell Museum<span class="a">J. Lee, <b>J. Bae</b>, Y. Bae<em>Sustainability 16(14), 6212 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[10]</span><div class="t">Experimental Study of a Single-Layer Free-Form Envelope Node Under Axial Loadings<span class="pubtag">교신저자</span><span class="a">J. Oh, <b>J. Bae*</b><em>International Journal of Civil Engineering 22(3), 421–433 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[11]</span><div class="t">Improving the Seismic Performance of Tall Steel Buildings Using Advanced Visco-Plastic Braces<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, Y.J. Kim, C.H. Lee<em>International Journal of Steel Structures 22(6), 1658–1668 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[12]</span><div class="t">Evaluation of Genetic Algorithms for Optimizing the Height-Wise Viscous Damper Distribution in Regular and Irregular Buildings<span class="pubtag">교신저자</span><span class="a">X. Huang, <b>J. Bae*</b><em>Arabian Journal for Science and Engineering 47(10), 12945–12962 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[13]</span><div class="t">Assessment of Concrete Macrocrack Depth Using Infrared Thermography<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, A. Jang, M.J. Park, J. Lee, Y.K. Ju<em>Steel and Composite Structures 43(4), 501–509 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[14]</span><div class="t">SMART SKY Eye System for Preliminary Structural Safety Assessment of Buildings Using Unmanned Aerial Vehicles<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, J. Lee, A. Jang, Y.K. Ju, M.J. Park<em>Sensors 22(7), 2762 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[15]</span><div class="t">Machine Learning-Based Concrete Crack Depth Prediction Using Thermal Images Taken under Daylight Conditions<span class="a">M.J. Park, J. Kim, S. Jeong, A. Jang, <b>J. Bae</b>, Y.K. Ju<em>Remote Sensing 14(9), 2151 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[16]</span><div class="t">Bond Behavior of Concrete-Filled Steel Tube Mega Columns with Different Connectors<span class="a">R.W. Alemayehu, <b>J. Bae</b>, Y.K. Ju, M.J. Park<em>Materials 15(8), 2791 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[17]</span><div class="t">Structural Behavior of a Composite Curtain Wall Fabricated by the Fused Deposition Modeling 3D Printing Method<span class="a">M.J. Park, <b>J. Bae</b>, Y.K. Ju<em>Polymers 14(7), 1431 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[18]</span><div class="t">An Innovative Shear Link as Damper: An Experimental and Numerical Study<span class="pubtag">교신저자</span><span class="a">A. Ghamari, Y.J. Kim, <b>J. Bae*</b><em>Steel and Composite Structures 42(4), 539–552 (2022)</em></span></div></div>
+      <div class="pub"><span class="no">[19]</span><div class="t">Utilizing an I-Shaped Shear Link as a Damper to Improve the Behaviour of a Concentrically Braced Frame<span class="pubtag">교신저자</span><span class="a">A. Ghamari, Y.J. Kim, <b>J. Bae*</b><em>Journal of Constructional Steel Research 186, 106915 (2021)</em></span></div></div>
+      <div class="pub"><span class="no">[20]</span><div class="t">Tapered Reduced Deep Beam Connection for Long Span Steel Moment Frames<span class="a">R.W. Alemayehu, S. Jung, <b>J. Bae</b>, C.H. Lee, Y.K. Ju<em>Engineering Structures 244, 112731 (2021)</em></span></div></div>
+      <div class="pub"><span class="no">[21]</span><div class="t">Seismic Reinforcement System of RC Structure Using Eccentric Brace Frame<span class="a">J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b><em>International Journal of Civil Engineering 19(9), 1021–1042 (2021)</em></span></div></div>
+      <div class="pub"><span class="no">[22]</span><div class="t">Current and New Approaches to Predict the Deflections of One-Way Flexural Members with a Focus on Composite Steel Deck Slabs Voided by Circular Tubes<span class="a">C.H. Lee, I. Mansouri, <b>J. Bae</b>, J. Ryu<em>Materials 14(2), 421 (2021)</em></span></div></div>
+      <div class="pub"><span class="no">[23]</span><div class="t">Modified Low-Cycle Fatigue Estimation Using Machine Learning for Radius-Cut Coke-Shaped Metallic Damper Subjected to Cyclic Loading<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y.K. Ju<em>International Journal of Steel Structures 20(6), 1849–1858 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[24]</span><div class="t">Fire Design Equation for Steel–Polymer Composite Floors in Thermal Fields via Finite Element Analysis<span class="a">M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju<em>Materials 13(23), 5573 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[25]</span><div class="t">The Pushout Test of Seismic Reinforcement System (SRM) Connection that Responds to Earthquake Extensive Level<span class="a">J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b><em>International Journal of Civil Engineering 18(12), 1347–1363 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[26]</span><div class="t">Fire Resistance of Hybrid Floor Based on Small-Scale Furnace Tests and Energy-Based Time Equivalent Approach<span class="a">M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju<em>International Journal of Steel Structures 20(6), 1811–1821 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[27]</span><div class="t">Cyclic Load Test and Finite Element Analysis of NOVEL Buckling-Restrained Brace<span class="a">R.W. Alemayehu, Y. Kim, <b>J. Bae</b>, Y.K. Ju<em>Materials 13(22), 5103 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[28]</span><div class="t">Cyclic Loading Performance of Radius-Cut Double Coke-Shaped Strip Dampers<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y. Kim, Y.K. Ju<em>Materials 13(18), 3920 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[29]</span><div class="t">Thermal Contact Conductance-Based Thermal Behavior Analytical Model for a Hybrid Floor at Elevated Temperatures<span class="a">M.J. Park, J.K. Min, <b>J. Bae</b>, Y.K. Ju<em>Materials 13(19), 4257 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[30]</span><div class="t">Seismic Design and Assessment of Steel Frames with Visco-Plastic Dampers<span class="pubtag">주저자</span><span class="a"><b>J. Bae</b>, T.L. Karavasilis<em>International Journal of Earthquake and Impact Engineering 2(4), 282–297 (2018)</em></span></div></div>
+      <div class="pub"><span class="no">[31]</span><div class="t">Experimental Study of Using Cantilever Type Steel Plates for Passive Energy Dissipation<span class="a">Y.J. Kim, T.S. Ahn, <b>J.H. Bae</b>, S.H. Oh<em>International Journal of Steel Structures 16(3), 959–974 (2016)</em></span></div></div>
+      <div class="pub"><span class="no">[32]</span><div class="t">Cyclic Loading Test of Wall Damping System with Steel Dampers<span class="a">H.J. Ahn, Y.J. Kim, <b>J.H. Bae</b>, I.Y. Jung<em>Advances in Structural Engineering 19(8), 1262–1274 (2016)</em></span></div></div>
+      <button class="morebtn" data-for="pl-int">SHOW ALL 32 ▾</button>
+    </div>
+
+    <div class="publist hideable folded" id="pl-dom">
+      <div class="pub"><span class="no">[01]</span><div class="t">3D 프린팅 기반 자기력 보조 경량 비좌굴가새 적용성 검증 연구<span class="pubtag">교신저자</span><span class="a">정은철, 김병현, 김영주, 김상훈, <b>배재훈*</b><em>한국강구조학회 논문집 37(6), 417–426 (2025)</em></span></div></div>
+      <div class="pub"><span class="no">[02]</span><div class="t">내진 성능을 고려한 비정형 강재 댐퍼의 딥러닝 기반 생성형 설계<span class="a">방진홍, <b>배재훈</b>, 김상훈, 박상인, 김영주, 도재혁<em>한국강구조학회 논문집 37(5), 305–314 (2025)</em></span></div></div>
+      <div class="pub"><span class="no">[03]</span><div class="t">유해화학물질 사외배관의 방호울타리 설치를 위한 방호성능 평가 연구<span class="a">김강윤, 김선형, <b>배재훈</b>, 김상훈<em>한국강구조학회 논문집 37(1), 1–9 (2025)</em></span></div></div>
+      <div class="pub"><span class="no">[04]</span><div class="t">콘크리트 구조물 균열 파악을 위한 분류 모델 분석<span class="a">장현준, <b>배재훈</b>, 김상훈<em>신뢰성응용연구 24(4), 398–404 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[05]</span><div class="t">Development of Tunnel Lining Crack Detection Device and Crack Detection for Smart Construction Diagnosis<span class="pubtag">교신저자</span><span class="a">W.Y. Kim, <b>J. Bae*</b><em>대한건축학회 논문집 40(11), 225–232 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[06]</span><div class="t">주기적 하중을 받는 탄소감축을 위한 조립 해체가 용이한 급속 시공 접합부(TZcon)의 수치해석 연구<span class="pubtag">교신저자</span><span class="a">오사벨 데이브, 최형진, 김상훈, 김영주, <b>배재훈*</b><em>한국전산구조공학회 논문집 37(4), 275–282 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[07]</span><div class="t">Finite Element Analysis of a Full-Scale, Rapid-Disassembly, Carbon-Minimized Dismantle Connection Subjected to Cyclic Loading<span class="pubtag">교신저자</span><span class="a">D.M. Osabel, H.J. Choi, S.H. Kim, Y.J. Kim, <b>J.H. Bae*</b><em>한국전산구조공학회 논문집 37(4) (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[08]</span><div class="t">디지털 트윈에 기반한 Texture Mapping 최적화 연구<span class="a">정은철, <b>배재훈</b>, 이병도, 배윤경, 김준택<em>차세대융합기술학회논문지 8(1), 41–50 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[09]</span><div class="t">디지털 트윈을 활용한 META ISLAND 신뢰성 연구<span class="pubtag">교신저자</span><span class="a">정은철, 임승완, <b>배재훈*</b><em>신뢰성응용연구 23(3), 297–304 (2023)</em></span></div></div>
+      <div class="pub"><span class="no">[10]</span><div class="t">미래교육 시대 메타버스를 활용한 프로젝트 제시형 첨단융합 구조 교육 소개<span class="pubtag">단독저자</span><span class="a"><b>배재훈</b><em>한국공간구조학회지 21(4), 4–9 (2021)</em></span></div></div>
+      <div class="pub"><span class="no">[11]</span><div class="t">3D 프린터를 활용한 PLA 폴리머 Space Truss의 최적화<span class="pubtag">주저자</span><span class="a"><b>배재훈</b>, 장지우, 주영규<em>한국공간구조학회지 20(1), 61–67 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[12]</span><div class="t">무인 항공기(UAV)와 AI 머신러닝기술을 활용한 구조물의 안전진단 기술 개발<span class="pubtag">주저자</span><span class="a"><b>배재훈</b>, 주영규<em>대한토목학회지 68(1), 20–27 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[13]</span><div class="t">PCM을 충전한 이중강관형 좌굴방지가새 개발<span class="a">홍석호, <b>배재훈</b>, 주영규<em>복합신소재구조학회지 11(2), 22–28 (2020)</em></span></div></div>
+      <div class="pub"><span class="no">[14]</span><div class="t">드론 및 열화상을 활용한 구조물 재난 안전 평가 SMART SKY EYE 시스템<span class="pubtag">주저자</span><span class="a"><b>배재훈</b>, 이종훈, 장아름, 주영규<em>한국공간구조학회지 19(3), 4–8 (2019)</em></span></div></div>
+      <div class="pub"><span class="no">[15]</span><div class="t">앵글을 전단연결재로 사용하는 합성보의 휨성능<span class="a">김영주, <b>배재훈</b>, 안태상, 최종권<em>한국강구조학회 논문집 27(1), 63–75 (2015)</em></span></div></div>
+      <div class="pub"><span class="no">[16]</span><div class="t">중력하중을 받는 SRC기둥–합성보 접합부 실험<span class="a">김영주, <b>배재훈</b>, 안태상, 장성훈<em>한국강구조학회 논문집 26(5), 441–452 (2014)</em></span></div></div>
+      <div class="pub"><span class="no">[17]</span><div class="t">SRC기둥–H형단면과 U형단면으로 구성된 합성보 접합부의 반복가력실험<span class="a">김영주, <b>배재훈</b>, 안태상, 김진원, 유홍식<em>한국강구조학회 논문집 26(4), 263–275 (2014)</em></span></div></div>
+      <div class="pub"><span class="no">[18]</span><div class="t">합성보에 적용된 앵글 전단연결재의 Push-out 실험<span class="a">김영주, <b>배재훈</b>, 안태상, 장동운<em>한국강구조학회 논문집 26(3), 155–167 (2014)</em></span></div></div>
+      <div class="pub"><span class="no">[19]</span><div class="t">초고층 다이아그리드 노드의 최적설계과정<span class="a">김상대, <b>배재훈</b>, 주영규, 김영주, 김도현<em>한국강구조학회 논문집 23(2), 211–220 (2011)</em></span></div></div>
+      <div class="pub"><span class="no">[20]</span><div class="t">초고층 다이아그리드 구조의 실험적 내진성능계수 평가<span class="pubtag">주저자</span><span class="a"><b>배재훈</b>, 주영규, 김영주, 김상대<em>한국강구조학회 논문집 22(1), 75–85 (2010)</em></span></div></div>
+      <button class="morebtn" data-for="pl-dom">SHOW ALL 20 ▾</button>
+    </div>
+
+    <div class="publist" id="pl-book">
+      <div class="pub"><span class="no">[근간]</span><div class="t">충전형 합성강판전단벽 지침 (집필간사)<span class="a"><em>한국강구조학회 · 한국건축구조기술사회 (2026 발간 예정)</em></span></div></div>
+      <div class="pub"><span class="no">[01]</span><div class="t">탄소중립 건축기준 2026 — 전 생애 주기 평가와 적용<span class="a"><em>2026</em></span></div></div>
+      <div class="pub"><span class="no">[02]</span><div class="t">Proceedings of the 11th International Conference on Behaviour of Steel Structures in Seismic Areas<span class="a"><em>Springer Nature (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[03]</span><div class="t">메타 아일랜드 가상공간의 건축혁명<span class="a"><em>기문당 (2024)</em></span></div></div>
+      <div class="pub"><span class="no">[04]</span><div class="t">탄소중립설계 예제집<span class="a"><em>기문당 (2023)</em></span></div></div>
+      <div class="pub"><span class="no">[05]</span><div class="t">탄소중립설계 지침서<span class="a"><em>기문당 (2022)</em></span></div></div>
+    </div>
+
+    <h3 class="subhead reveal">Journals We Publish In</h3>
+    <div class="jgrid reveal" id="jgrid"></div>
+  </div>
+</section>
+
+<!-- ═══════ NEWS ═══════ -->
+<section class="blk alt" id="news">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-06 · NEWS</div>
+    <h2 class="reveal">News</h2>
+    <div class="news reveal">
+      <div class="row"><span class="d">2026.07</span><div><h4 data-en="Md Tarif Aziz passes final M.S. thesis defense">Md Tarif Aziz 연구원, 석사학위논문 최종 심사 통과</h4><p data-en="M.S. degree in August 2026 for research on autonomous robotic, deep-learning-based concrete crack inspection.">자율주행 로봇·딥러닝 기반 콘크리트 균열 진단 연구로 2026년 8월 석사학위 취득 예정.</p></div></div>
+      <div class="row"><span class="d">2026.06</span><div><h4 data-en="Paper accepted in Journal of Computational Design and Engineering">Journal of Computational Design and Engineering 논문 게재 확정</h4><p data-en="Generative AI (VAE–GAN) design of 3D-printed steel dampers (corresponding author; Oxford Univ. Press, Q1).">생성형 AI(VAE–GAN) 기반 3D프린팅 강재 댐퍼 설계 연구 (교신저자, Oxford Univ. Press, Q1).</p></div></div>
+      <div class="row"><span class="d">2026.06</span><div><h4 data-en="VM-BRB Year-2 kick-off meeting held">VM-BRB 2차년도 연구 Kick-off Meeting 개최</h4><p data-en="Year 2 of the 3H-CORE BRB system launched with Hyundai Steel and KISEC (June 2).">현대제철·한국건축구조연구원과 3H-CORE BRB 시스템 개발 2차년도 착수 (6.2).</p></div></div>
+      <div class="row"><span class="d">2026.06</span><div><h4 data-en="Final review completed for the Composite Steel Plate Shear Wall Guideline">「충전형 합성강판전단벽 지침」 본문 최종 검토 완료</h4><p data-en="Joint KSSC–KSEA guideline heading to publication (executive editor).">한국강구조학회·한국건축구조기술사회 공동 지침, 발간 준비 중 (집필간사).</p></div></div>
+      <div class="row"><span class="d">2026.06</span><div><h4 data-en="HyeongJin Choi wins Best Presentation Award at KSSC Conference">최형진 연구원, 한국강구조학회 학술대회 우수학술발표상 수상</h4><p data-en="Flexural performance of demountable H-beam–HSS column connections.">해체가 용이한 H형강 보-HSS 기둥 접합부의 휨성능 연구.</p></div></div>
+      <div class="row"><span class="d">2026.05</span><div><h4 data-en="Paper published in EAAI — deep-learning prediction of BRB hysteresis">EAAI 논문 게재 — BRB 이력거동 딥러닝 예측</h4><p data-en="Engineering Applications of Artificial Intelligence (Q1, IF 9.0, Top 5%), with EunCheol Jeong.">Engineering Applications of Artificial Intelligence (Q1, IF 9.0, Top 5%), 정은철 연구원 참여.</p></div></div>
+      <div class="row"><span class="d">2026.04</span><div><h4 data-en="Prof. Bae receives the AIK Academic Award">배재훈 교수, 대한건축학회 학술상 수상</h4><p data-en="2026 General Assembly, Architectural Institute of Korea.">2026년 대한건축학회 정기총회.</p></div></div>
+      <div class="row"><span class="d">2025.10</span><div><h4 data-en="AIK 80th Anniversary Conference participation">대한건축학회 창립 80주년 기념대회 참가</h4><p data-en="HyeongJin Choi, EunCheol Jeong, and Md Tarif Aziz presented on sustainable design, new materials, and structural performance.">최형진·정은철·Md Tarif Aziz 연구원 — 지속가능 설계·신재료·구조 성능 발표.</p></div></div>
+      <div class="row"><span class="d">2025.05</span><div><h4 data-en="Prof. Bae wins IStructE Structural Engineering Education Award — first in Korea">배재훈 교수, 영국 IStructE '구조공학 교육 우수상' 한국 최초 수상</h4><p data-en="Award ceremony in London; recognized for education in sustainable structural engineering.">런던 시상식 참석. 지속가능 건축 구조공학 교육 공로.</p></div></div>
+      <div class="row"><span class="d">2025</span><div><h4 data-en="Appointed to the Editorial Board of Resilient Cities and Structures">Resilient Cities and Structures 편집위원 선임</h4><p data-en="Q1 international journal published by Elsevier.">Elsevier 발행 Q1 국제학술지.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONTACT ═══════ -->
+<section class="blk" id="contact">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-07 · CONTACT</div>
+    <h2 class="reveal">Contact</h2>
+    <p class="lead reveal" data-en="We welcome inquiries about graduate admission, joint research, and industry collaboration.">연구실 입학·공동연구·산학협력 문의를 환영합니다.</p>
+    <div class="contact-grid reveal">
+      <div class="cbox"><div class="k">ADDRESS</div><p data-en="Dept. of Architecture Design, College of Engineering<br>Chonnam National University, Yeosu Campus<br>50 Daehak-ro, Yeosu-si, Jeonnam 59626, Korea">전남 여수시 대학로 50<br>전남대학교 여수캠퍼스<br>공학대학 건축디자인학과</p></div>
+      <div class="cbox"><div class="k">EMAIL</div><p><a href="mailto:skycity-bjh@jnu.ac.kr">skycity-bjh@jnu.ac.kr</a></p></div>
+      <div class="cbox"><div class="k">PHONE</div><p>061-659-7338</p></div>
+      <div class="cbox"><div class="k">LINKS</div><p><a href="https://scholar.google.com" rel="noopener">Google Scholar</a><br><a href="https://sites.google.com/view/zerocarbonmetadesignlab/home" rel="noopener">기존 홈페이지</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-l">© 2026 ZERO CARBON STRUCTURAL DESIGN LAB · CHONNAM NATIONAL UNIVERSITY</div>
+  <div class="f-l">REDUCE · REUSE · RECYCLE</div>
+</footer>
+
+<script>
+// ── LAB_DATA 렌더링: 상단 데이터 블록 기준으로 목록·통계 자동 생성 ──
+(function(){
+  var D = window.LAB_DATA; if (!D) return;
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+
+  // Publications
+  function fillPubs(id, arr, numbered){
+    var box = document.getElementById(id); if (!box) return;
+    [].forEach.call(box.querySelectorAll(".pub"), function(e){ e.remove(); });
+    var seq = 0;
+    var html = arr.map(function(p){
+      var no = p.no || pad(++seq);
+      var tags = (p.tag ? '<span class="pubtag">' + p.tag + '</span>' : '') + (p.note ? '<span class="pubtag">' + p.note + '</span>' : '');
+      var auth = p.authors ? p.authors : '';
+      return '<div class="pub"><span class="no">[' + no + ']</span><div class="t">' + p.title + tags +
+             '<span class="a">' + auth + '<em>' + p.journal + '</em></span></div></div>';
+    }).join("");
+    var btn = box.querySelector(".morebtn");
+    if (btn) { btn.insertAdjacentHTML("beforebegin", html); btn.textContent = "SHOW ALL " + arr.length + " ▾"; }
+    else box.insertAdjacentHTML("beforeend", html);
+  }
+  fillPubs("pl-int", D.pubsInt);
+  fillPubs("pl-dom", D.pubsDom);
+  fillPubs("pl-book", D.books);
+
+  // 통계·탭·소개문 자동 갱신
+  var fa = D.pubsInt.filter(function(p){ return p.tag === "주저자" || p.tag === "단독저자"; }).length;
+  var ca = D.pubsInt.filter(function(p){ return p.tag === "교신저자"; }).length;
+  var nBooks = D.books.filter(function(b){ return !b.draft; }).length;
+  function setText(id, v){ var e = document.getElementById(id); if (e) e.textContent = v; }
+  setText("statInt", D.pubsInt.length); setText("statDom", D.pubsDom.length);
+  setText("statBook", nBooks); setText("statPj", D.projects.length + "+");
+  function setTab(id, label){ var b = document.querySelector('[data-tab="' + id + '"]'); if (b) b.textContent = label; }
+  setTab("pl-int", "INTERNATIONAL (" + D.pubsInt.length + ")");
+  setTab("pl-dom", "DOMESTIC (" + D.pubsDom.length + ")");
+  setTab("pl-book", "BOOKS (" + nBooks + ")");
+  var lead = document.getElementById("pubLead");
+  if (lead) {
+    lead.innerHTML = "국제 SCI/E " + D.pubsInt.length + "편(게재확정 포함, 주저자 " + fa + " · 교신저자 " + ca + ") · 국내 학술지 " + D.pubsDom.length + "편 · 저서 " + nBooks + "권. <b>굵은 글씨</b>는 배재훈 교수, *는 교신저자입니다.";
+    lead.dataset.en = D.pubsInt.length + " SCI/E papers (incl. in-press; " + fa + " first-authored, " + ca + " corresponding) · " + D.pubsDom.length + " KCI papers · " + nBooks + " books. <b>Bold</b> = Prof. Jaehoon Bae, * = corresponding author.";
+  }
+
+  // People
+  var pg = document.querySelector(".pgrid");
+  if (pg) {
+    pg.innerHTML = D.people.map(function(m){
+      return '<div class="person"><div class="avatar" data-photo="images/people/' + m.photo + '">' + m.initial + '</div>' +
+             '<h4>' + m.name + '</h4><div class="rr">' + m.role + '</div><p>' + m.ko + '</p></div>';
+    }).join("");
+    [].forEach.call(pg.querySelectorAll(".person"), function(card, i){
+      card.querySelector(".avatar").dataset.alt = D.people[i].name;
+      if (D.people[i].en) card.querySelector("p").dataset.en = D.people[i].en;
+    });
+  }
+  var al = document.querySelector(".alumni-list");
+  if (al) {
+    al.innerHTML = D.alumni.map(function(a){
+      return '<div class="row"><span class="y">' + a.year + '</span><span>' + a.ko + '</span></div>';
+    }).join("");
+    [].forEach.call(al.querySelectorAll(".row"), function(row, i){
+      if (D.alumni[i].en) row.querySelectorAll("span")[1].dataset.en = D.alumni[i].en;
+    });
+  }
+
+  // Projects
+  var host = document.querySelector("#projects .blk-in");
+  if (host) {
+    [].forEach.call(host.querySelectorAll(".pj"), function(e){ e.remove(); });
+    D.projects.forEach(function(p){
+      var card = document.createElement("div");
+      card.className = "pj reveal" + (p.hot ? " hot" : "");
+      card.innerHTML = '<div><span class="no">' + p.id + '</span>' + (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') + '</div>' +
+        '<div><h3>' + p.ko.title + '</h3><div class="meta">' + p.ko.meta + '</div><p>' + p.ko.desc + '</p>' +
+        '<div class="pjshot" data-photo="images/projects/' + p.photo + '" data-alt="' + p.id + '" hidden></div></div>';
+      if (p.en.title) card.querySelector("h3").dataset.en = p.en.title;
+      if (p.en.meta) card.querySelector(".meta").dataset.en = p.en.meta;
+      if (p.en.desc) card.querySelector("p").dataset.en = p.en.desc;
+      host.appendChild(card);
+    });
+  }
+
+  // News (link: 제목이 기사로 연결 / photo: images/news/… 사진 표시)
+  var nw = document.querySelector(".news");
+  if (nw) {
+    nw.innerHTML = "";
+    D.news.forEach(function(n){
+      var row = document.createElement("div");
+      row.className = "row";
+      function tLink(t){ return n.link ? '<a href="' + n.link + '" target="_blank" rel="noopener">' + t + ' ↗</a>' : t; }
+      var shot = n.photo ? '<div class="newsshot" data-photo="images/news/' + n.photo + '" data-alt="" hidden></div>' : '';
+      row.innerHTML = '<span class="d">' + n.date + '</span><div><h4>' + tLink(n.ko.title) + '</h4><p>' + n.ko.desc + '</p>' + shot + '</div>';
+      if (n.en) { row.querySelector("h4").dataset.en = tLink(n.en.title); row.querySelector("p").dataset.en = n.en.desc; }
+      nw.appendChild(row);
+    });
+  }
+
+  // Journals (표지 이미지: images/journals/key.jpg, 카드 전체가 저널 홈페이지 링크)
+  var jg = document.getElementById("jgrid");
+  if (jg && D.journals) {
+    jg.innerHTML = D.journals.map(function(j){
+      return '<a class="jcard" href="' + j.url + '" target="_blank" rel="noopener">' +
+             '<div class="jcover" data-photo="images/journals/' + j.key + '" data-alt="' + j.name + '"><span>' + j.abbr + '</span></div>' +
+             '<div class="jname">' + j.name + '</div><div class="jmeta">' + j.meta + ' ↗</div></a>';
+    }).join("");
+  }
+})();
+
+// photo loader — images/…​.jpg|png|jpeg|webp 파일이 있으면 자동 표시, 없으면 이니셜 유지
+document.querySelectorAll("[data-photo]").forEach(function(el){
+  var base = el.dataset.photo, exts = ["jpg", "png", "jpeg", "webp"], i = 0;
+  var img = new Image();
+  img.onload = function(){
+    img.alt = el.dataset.alt || "";
+    if (el.hasAttribute("hidden")) { el.hidden = false; }   // 사진이 있을 때만 영역 표시 (labshot·pjshot)
+    else { img.className = "photo"; }                        // 아바타·프로필은 이니셜 위에 덮기
+    el.prepend(img);
+  };
+  img.onerror = function(){ i++; if (i < exts.length) img.src = base + "." + exts[i]; };
+  img.src = base + "." + exts[0];
+});
+
+// theme toggle
+(function(){
+  var btn = document.getElementById("themeBtn");
+  var saved = null;
+  try { saved = localStorage.getItem("zcsd-theme"); } catch(e){}
+  if (saved) document.documentElement.dataset.theme = saved;
+  btn.addEventListener("click", function(){
+    var cur = document.documentElement.dataset.theme;
+    var sysDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = (cur ? cur === "dark" : sysDark) ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("zcsd-theme", next); } catch(e){}
+  });
+})();
+
+// 언어 표시: 기본 = 국·영문 병기, 버튼 클릭 시 영문 전용
+(function(){
+  var btn = document.getElementById("langBtn");
+  var els = [].slice.call(document.querySelectorAll("[data-en]"));
+  els.forEach(function(el){ el.dataset.ko = el.innerHTML; });
+  function bothView(el){
+    el.innerHTML = el.dataset.ko;
+    if (el.classList.contains("y")) return;                       // 연도 레일은 국문만
+    if (el.tagName === "H3" && el.closest(".rcard")) return;      // 연구카드는 영문 라벨이 이미 있음
+    var s = document.createElement("span");
+    s.className = "en-sub";
+    s.innerHTML = el.dataset.en;
+    [].forEach.call(s.querySelectorAll(".y"), function(y){ y.remove(); });
+    el.appendChild(s);
+  }
+  function setMode(m){
+    els.forEach(function(el){
+      if (m === "en") el.innerHTML = el.dataset.en;
+      else bothView(el);
+    });
+    document.documentElement.lang = (m === "en") ? "en" : "ko";
+    btn.textContent = (m === "en") ? "KO·EN" : "EN ONLY";
+    try { localStorage.setItem("zcsd-lang", m); } catch(e){}
+  }
+  var saved = "both";
+  try { saved = (localStorage.getItem("zcsd-lang") === "en") ? "en" : "both"; } catch(e){}
+  setMode(saved);
+  btn.addEventListener("click", function(){ setMode(document.documentElement.lang === "en" ? "both" : "en"); });
+})();
+
+// reveal on scroll
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, {threshold: .08});
+document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+// nav active state
+var secs = document.querySelectorAll("section.blk, header.hero");
+var navLinks = document.querySelectorAll("nav.top .links a");
+var io2 = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (e.isIntersecting) {
+      navLinks.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); });
+    }
+  });
+}, {rootMargin: "-40% 0px -55% 0px"});
+secs.forEach(function(s){ if (s.id) io2.observe(s); });
+
+// publications tabs + fold
+document.querySelectorAll(".tabs button").forEach(function(b){
+  b.addEventListener("click", function(){
+    document.querySelectorAll(".tabs button").forEach(function(x){ x.classList.remove("on"); x.setAttribute("aria-selected","false"); });
+    b.classList.add("on"); b.setAttribute("aria-selected","true");
+    document.querySelectorAll(".publist").forEach(function(p){ p.classList.remove("on"); });
+    document.getElementById(b.dataset.tab).classList.add("on");
+  });
+});
+document.querySelectorAll(".morebtn").forEach(function(b){
+  b.addEventListener("click", function(){
+    var list = document.getElementById(b.dataset.for);
+    var folded = list.classList.toggle("folded");
+    b.textContent = folded ? b.textContent.replace("▴","▾").replace("FOLD","SHOW ALL") : b.textContent.replace("▾","▴").replace("SHOW ALL","FOLD");
+  });
+});
+</script>
+</body>
+</html>

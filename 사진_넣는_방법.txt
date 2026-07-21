@@ -1,0 +1,62 @@
+■ 홈페이지에 사진 넣는 방법
+
+images 폴더에 아래 이름으로 사진 파일을 넣기만 하면 자동으로 홈페이지에 표시됩니다.
+(사진이 없으면 해당 영역이 표시되지 않거나 이니셜로 대체됩니다. 별도 코드 수정 불필요)
+
+지원 확장자: .jpg .png .jpeg .webp  (권장: jpg)
+
+──────────────────────────────────────────────
+[기본]
+images\logo.png                       왼쪽 위 ZCSD LAB 옆 연구실 마크(로고) — 넣으면
+                                      기본 도형 마크 대신 표시됩니다 (정사각형·투명 PNG 권장)
+images\hero.jpg                       메인(히어로) 배경 사진 — 넣으면 기본 배경(런던
+                                      거킨 빌딩) 대신 이 사진이 표시됩니다
+images\professor.jpg                  Professor 프로필 사진 (정사각형 권장)
+images\lab.jpg                        About Us 하단 연구실 단체 사진 (가로형 권장)
+
+[연구원 — People 섹션, 원형 크롭되므로 정사각형 권장]
+images\people\dave-osabel.jpg         Dave M. Osabel (박사후연구원)
+images\people\hyeongjin-choi.jpg      최형진 (석사과정)
+images\people\daeun-kim.jpg           김다은 (학부연구원)
+images\people\taeho-woo.jpg           우태호 (학부연구원)
+images\people\munyoung-beom.jpg       범문영 (학부연구원)
+
+[뉴스 — 뉴스 항목 본문 아래 사진 (가로형 권장)]
+images\news\(파일명).jpg              index.html 데이터의 news 항목에 photo:"파일명"을
+                                      적으면 그 사진이 해당 뉴스 아래 표시됩니다
+                                      (예: photo:"aziz-thesis" → images\news\aziz-thesis.jpg)
+
+[저널 표지 — Publications 하단 'Journals We Publish In' 카드 (세로형 3:4)]
+images\journals\es.jpg                Engineering Structures
+images\journals\jcsr.jpg              Journal of Constructional Steel Research
+images\journals\eaai.jpg              Engineering Applications of AI
+images\journals\jcde.jpg              Journal of Computational Design and Engineering
+images\journals\rineng.jpg            Results in Engineering
+images\journals\jmrt.jpg              Journal of Materials Research and Technology
+images\journals\srep.jpg              Scientific Reports
+images\journals\rcs.jpg               Resilient Cities and Structures
+images\journals\ijss.jpg              International Journal of Steel Structures
+images\journals\ijce.jpg              International Journal of Civil Engineering
+images\journals\scs.jpg               Steel and Composite Structures
+images\journals\mdpi.jpg              MDPI (Materials·Sensors·Sustainability)
+                                      * 표지가 없으면 저널 약어(ES 등)로 표시됩니다
+
+[프로젝트 — 각 과제 카드 아래 핵심 사진, 가로형 권장 (약 800×300 비율)]
+images\projects\pj07.jpg              PJ.07 VM-BRB (자기력 Self-Centering BRB)
+images\projects\pj08.jpg              PJ.08 목조 Hybrid Deck Slab (Steel-Timber OSC)
+images\projects\pj09.jpg              PJ.09 충전형 합성강판전단벽 설계지침
+images\projects\pj03.jpg              PJ.03 CNDC (해체가 쉬운 보-기둥 접합)
+images\projects\pj02.jpg              PJ.02 H-3DPD (강재 3D프린팅 제진 댐퍼)
+images\projects\pj01.jpg              PJ.01 탄소중립 설계·탄소배출량 정량화
+images\projects\pj05.jpg              PJ.05 디지털 트윈 META ISLAND
+images\projects\pj06.jpg              PJ.06 구조 안전진단 자율주행 로봇
+──────────────────────────────────────────────
+
+· 인물 사진은 정사각형에 가깝게 잘라 넣으면 가장 예쁘게 나옵니다 (자동으로 원형 크롭됨).
+· 프로젝트 사진은 실험 장면·시제품·렌더링 등 과제를 대표하는 가로형 사진이 좋습니다.
+  (세로가 긴 사진은 위아래가 잘려 보일 수 있습니다 — 최대 높이 300px로 표시)
+· 파일명은 반드시 위와 같이 영문 소문자로 저장하세요.
+· 구성원·과제가 바뀌면 index.html에서 해당 카드의 data-photo="..." 부분과 이 목록을
+  함께 수정하면 됩니다.
+· 인터넷이 안 되는 환경에서는 기본 배경(거킨 빌딩)이 안 뜰 수 있습니다 —
+  images\hero.jpg를 넣어두면 항상 해당 사진이 표시됩니다.
