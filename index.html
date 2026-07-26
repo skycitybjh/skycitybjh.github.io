@@ -205,8 +205,9 @@ projects: [
 /* 뉴스 항목에 쓸 수 있는 추가 필드:
    link:"https://기사주소"  → 제목이 클릭 가능한 링크(↗)가 됩니다
    photo:"파일명"           → images\news\파일명.jpg 사진이 본문 아래 표시됩니다 */
+/* featured:true → 메인(히어로) 화면의 대표뉴스 배너로 표시됩니다 (없으면 맨 위 뉴스가 대표) */
 news: [
- {date:"2026.07", link:"https://today.jnu.ac.kr/WebApp/web/HOM/COM/Board/board.aspx?boardID=148&bbsMode=view&page=1&key=8736", photo:"choi-scholarship",
+ {date:"2026.07", featured:true, link:"https://today.jnu.ac.kr/WebApp/web/HOM/COM/Board/board.aspx?boardID=148&bbsMode=view&page=1&key=8736", photo:"choi-scholarship",
   ko:{title:"최형진 박사과정생, 2026 대학원 대통령과학장학금 선정", desc:"한국장학재단 이공계 박사과정 전국 40명에 선정 — 건축구조 분야에서는 이례적인 성과. 건물의 재사용성을 높여 탄소저감을 실현하고 지진 안전성을 동시에 확보하는 차세대 건축구조 시스템을 연구하고 있습니다."},
   en:{title:"HyeongJin Choi selected for the 2026 Presidential Science Scholarship (Ph.D.)", desc:"One of 40 STEM doctoral students nationwide (Korea Student Aid Foundation) — a rare selection in building structures. His research develops next-generation structural systems that enhance reusability for carbon reduction while securing seismic safety."}},
  {date:"2026.07", link:"", photo:"aziz-thesis",
@@ -216,7 +217,7 @@ news: [
   en:{title:"Paper accepted in Journal of Computational Design and Engineering", desc:"Generative AI (VAE–GAN) design of 3D-printed steel dampers (corresponding author; Oxford Univ. Press, Q1)."}},
  {date:"2026.06", ko:{title:"VM-BRB 2차년도 연구 Kick-off Meeting 개최", desc:"현대제철·한국건축구조연구원과 3H-CORE BRB 시스템 개발 2차년도 착수 (6.2)."},
   en:{title:"VM-BRB Year-2 kick-off meeting held", desc:"Year 2 of the 3H-CORE BRB system launched with Hyundai Steel and KISEC (June 2)."}},
- {date:"2026.06", ko:{title:"「충전형 합성강판전단벽 지침」 본문 최종 검토 완료", desc:"한국강구조학회·한국건축구조기술사회 공동 지침, 발간 준비 중 (집필간사)."},
+ {date:"2026.06", photo:"shear-wall-guideline", ko:{title:"「충전형 합성강판전단벽 지침」 본문 최종 검토 완료", desc:"한국강구조학회·한국건축구조기술사회 공동 지침, 발간 준비 중 (집필간사)."},
   en:{title:"Final review completed for the Composite Steel Plate Shear Wall Guideline", desc:"Joint KSSC–KSEA guideline heading to publication (executive editor)."}},
  {date:"2026.06", photo:"kssc-award", ko:{title:"최형진 연구원, 한국강구조학회 학술대회 우수학술발표상 수상", desc:"해체가 용이한 H형강 보-HSS 기둥 접합부의 휨성능 연구."},
   en:{title:"HyeongJin Choi wins Best Presentation Award at KSSC Conference", desc:"Flexural performance of demountable H-beam–HSS column connections."}},
@@ -224,12 +225,22 @@ news: [
   en:{title:"Paper published in EAAI — deep-learning prediction of BRB hysteresis", desc:"Engineering Applications of Artificial Intelligence (Q1, IF 9.0, Top 5%), with EunCheol Jeong."}},
  {date:"2026.04", ko:{title:"배재훈 교수, 대한건축학회 학술상 수상", desc:"2026년 대한건축학회 정기총회."},
   en:{title:"Prof. Bae receives the AIK Academic Award", desc:"2026 General Assembly, Architectural Institute of Korea."}},
- {date:"2025.10", ko:{title:"대한건축학회 창립 80주년 기념대회 참가", desc:"최형진·정은철·Md Tarif Aziz 연구원 — 지속가능 설계·신재료·구조 성능 발표."},
+ {date:"2025.10", photo:"aik80", ko:{title:"대한건축학회 창립 80주년 기념대회 참가", desc:"최형진·정은철·Md Tarif Aziz 연구원 — 지속가능 설계·신재료·구조 성능 발표."},
   en:{title:"AIK 80th Anniversary Conference participation", desc:"HyeongJin Choi, EunCheol Jeong, and Md Tarif Aziz presented on sustainable design, new materials, and structural performance."}},
- {date:"2025.05", ko:{title:"배재훈 교수, 영국 IStructE '구조공학 교육 우수상' 한국 최초 수상", desc:"런던 시상식 참석. 지속가능 건축 구조공학 교육 공로."},
+ {date:"2025.10", photo:"carbon-cert", ko:{title:"대한건축학회 탄소중립 인증체계 고도화 연구 총괄책임 선임", desc:"배재훈 교수, 대한건축학회 과제(2025.10–2026.03) 총괄책임자로 선임."},
+  en:{title:"Appointed lead of the AIK carbon-neutral certification framework project", desc:"Prof. Bae leads the AIK research project (Oct 2025 – Mar 2026)."}},
+ {date:"2025.05", photo:"istructe", ko:{title:"배재훈 교수, 영국 IStructE '구조공학 교육 우수상' 한국 최초 수상", desc:"런던 시상식 참석. 지속가능 건축 구조공학 교육 공로."},
   en:{title:"Prof. Bae wins IStructE Structural Engineering Education Award — first in Korea", desc:"Award ceremony in London; recognized for education in sustainable structural engineering."}},
- {date:"2025", ko:{title:"Resilient Cities and Structures 편집위원 선임", desc:"Elsevier 발행 Q1 국제학술지."},
-  en:{title:"Appointed to the Editorial Board of Resilient Cities and Structures", desc:"Q1 international journal published by Elsevier."}}
+ {date:"2025.05", photo:"iabse", ko:{title:"IABSE Symposium Tokyo 2025 참가 — CNDC 연구 발표", desc:"최형진 연구원이 '환경친화 기술과 구조' 주제 국제학술대회(5.18–21, 도쿄)에서 CNDC 접합부 3차원 유한요소해석 연구를 발표."},
+  en:{title:"IABSE Symposium Tokyo 2025 — CNDC research presented", desc:"HyeongJin Choi presented a 3D FEA study of the CNDC connection at the symposium on environmentally friendly technologies and structures (May 18–21, Tokyo)."}},
+ {date:"2025.04", photo:"jeong-award", ko:{title:"정은철 연구원, 대한건축학회 춘계학술발표대회 우수발표논문상 수상", desc:"3D 프린팅·자기력을 활용한 경량형 BRB 성능 향상 연구 포스터 발표."},
+  en:{title:"EunCheol Jeong wins Best Presentation Award at the AIK Spring Conference", desc:"Poster on performance enhancement of lightweight BRBs using 3D printing and magnetism."}},
+ {date:"2025", photo:"rcs-editorial", ko:{title:"Resilient Cities and Structures 편집위원 선임", desc:"Elsevier 발행 Q1 국제학술지."},
+  en:{title:"Appointed to the Editorial Board of Resilient Cities and Structures", desc:"Q1 international journal published by Elsevier."}},
+ {date:"2025", photo:"jeong-nrf", ko:{title:"정은철 연구원, 한국연구재단 석사과정생 연구장려금 선정", desc:"건축구조와 디지털 설계를 융합한 연구 과제로 선정."},
+  en:{title:"EunCheol Jeong awarded the NRF Master's Research Grant", desc:"Selected for research fusing building structures with digital design."}},
+ {date:"2025.02", ko:{title:"대학생 무한도전 프로젝트 발표", desc:"여수산단 파이프랙 접합부 제안 주제 발표 (2.27)."},
+  en:{title:"Undergraduate Challenge Project presentation", desc:"Proposal for pipe-rack connections in the Yeosu Industrial Complex (Feb 27)."}}
 ],
 
 /* 게재 저널 카드 — key는 표지 이미지 파일명 (images\journals\key.jpg), url은 저널 홈페이지 */
@@ -362,6 +373,18 @@ journals: [
   .hero .r3 b{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--h-acc);letter-spacing:.1em;display:block}
   .hero .r3 span{font-size:12.5px;color:var(--h-sub)}
   .hero .credit{position:absolute;right:14px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;color:rgba(244,245,241,.4)}
+  .hero-news{
+    display:flex;align-items:center;gap:14px;margin-top:30px;max-width:660px;
+    padding:13px 20px;border:1px solid var(--h-line);border-left:3px solid var(--h-acc);
+    background:rgba(9,17,13,.55);backdrop-filter:blur(4px);
+    text-decoration:none;color:var(--h-ink);
+  }
+  .hero-news:hover{border-color:var(--h-acc)}
+  .hero-news:focus-visible{outline:2px solid var(--h-acc);outline-offset:2px}
+  .hero-news .hn-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--h-acc);white-space:nowrap}
+  .hero-news .hn-title{font-size:13.5px;line-height:1.45;font-weight:500}
+  .hero-news .hn-title .en-sub{color:rgba(200,207,198,.75)}
+  .hero-news .hn-arrow{margin-left:auto;color:var(--h-acc);font-size:16px;flex:none}
   .stats{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,64px);margin-top:52px}
   .stat b{display:block;font-size:clamp(28px,3.6vw,44px);font-weight:900;color:var(--h-acc);line-height:1.1}
   .stat span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--h-sub)}
@@ -927,6 +950,23 @@ journals: [
       nw.appendChild(row);
     });
   }
+
+  // 대표뉴스 배너 — featured:true인 뉴스(없으면 맨 위 뉴스)를 히어로에 표시
+  (function(){
+    var f = null;
+    for (var i = 0; i < D.news.length; i++) { if (D.news[i].featured) { f = D.news[i]; break; } }
+    if (!f) f = D.news[0];
+    if (!f) return;
+    var r3 = document.querySelector(".hero .r3");
+    if (!r3) return;
+    var a = document.createElement("a");
+    a.className = "hero-news";
+    a.href = f.link || "#news";
+    if (f.link) { a.target = "_blank"; a.rel = "noopener"; }
+    a.innerHTML = '<span class="hn-label">' + f.date + ' · NEWS</span><span class="hn-title">' + f.ko.title + '</span><span class="hn-arrow">→</span>';
+    if (f.en) a.querySelector(".hn-title").dataset.en = f.en.title;
+    r3.insertAdjacentElement("afterend", a);
+  })();
 
   // Journals (표지 이미지: images/journals/key.jpg, 카드 전체가 저널 홈페이지 링크)
   var jg = document.getElementById("jgrid");
