@@ -450,6 +450,12 @@ journals: [
   .pjshot img{display:block;width:100%;max-height:300px;object-fit:cover}
   .newsshot{margin-top:10px;border:1px solid var(--line);max-width:560px}
   .newsshot img{display:block;width:100%;max-height:260px;object-fit:cover}
+  /* 여러 장이면 2열 그리드로 배치 */
+  .newsshot:has(img + img), .pjshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:var(--panel)}
+  .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:200px;max-height:none;object-fit:cover;border:1px solid var(--line)}
+  .labshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .labshot:has(img + img) figcaption{grid-column:1 / -1}
+  .labshot:has(img + img) img{height:260px;max-height:none;object-fit:cover}
   .news h4 a{color:var(--pine);text-decoration:none}
   .news h4 a:hover{text-decoration:underline}
   /* 저널 카드 */
@@ -980,18 +986,40 @@ journals: [
 })();
 
 // photo loader — images/…​.jpg|png|jpeg|webp 파일이 있으면 자동 표시, 없으면 이니셜 유지
-document.querySelectorAll("[data-photo]").forEach(function(el){
-  var base = el.dataset.photo, exts = ["jpg", "png", "jpeg", "webp"], i = 0;
-  var img = new Image();
-  img.onload = function(){
-    img.alt = el.dataset.alt || "";
-    if (el.hasAttribute("hidden")) { el.hidden = false; }   // 사진이 있을 때만 영역 표시 (labshot·pjshot)
-    else { img.className = "photo"; }                        // 아바타·프로필은 이니셜 위에 덮기
-    el.prepend(img);
-  };
-  img.onerror = function(){ i++; if (i < exts.length) img.src = base + "." + exts[i]; };
-  img.src = base + "." + exts[0];
-});
+// 뉴스·과제·단체사진은 "파일명-2.jpg", "파일명-3.jpg" … 로 여러 장(최대 8장) 자동 표시
+(function(){
+  var exts = ["jpg", "png", "jpeg", "webp"];
+  function attempt(base, cb){
+    var i = 0, img = new Image();
+    img.onload = function(){ cb(img); };
+    img.onerror = function(){ i++; if (i < exts.length) img.src = base + "." + exts[i]; else cb(null); };
+    img.src = base + "." + exts[0];
+  }
+  document.querySelectorAll("[data-photo]").forEach(function(el){
+    var base = el.dataset.photo;
+    var multi = el.classList.contains("newsshot") || el.classList.contains("pjshot") || el.classList.contains("labshot");
+    var cap = el.querySelector("figcaption");
+    function put(im){ if (cap) el.insertBefore(im, cap); else el.appendChild(im); }
+    attempt(base, function(img){
+      if (!img) return;
+      img.alt = el.dataset.alt || "";
+      if (el.hasAttribute("hidden")) { el.hidden = false; put(img); }
+      else if (multi) { put(img); }
+      else { img.className = "photo"; el.prepend(img); }
+      if (!multi) return;
+      var n = 2;
+      (function next(){
+        if (n > 8) return;
+        attempt(base + "-" + n, function(im){
+          if (!im) return;
+          im.alt = "";
+          put(im);
+          n++; next();
+        });
+      })();
+    });
+  });
+})();
 
 // theme toggle
 (function(){
