@@ -46,7 +46,7 @@ images\journals\scs.jpg               Steel and Composite Structures
 images\journals\mdpi.jpg              MDPI (Materials·Sensors·Sustainability)
                                       * 표지가 없으면 저널 약어(ES 등)로 표시됩니다
 
-[연구 소개 포스터 — Projects 섹션 맨 위 대형 표시 (세로형 포스터 그대로 OK)]
+[연구 소개 포스터 — About Us 연구분야 카드(R-01~R-06) 아래 대형 표시 (세로형 포스터 그대로 OK)]
 images\projects\lab-intro.jpg        연구실 소개 포스터 (lab-intro-2, -3 … 으로 최대 8장,
                                       2장 이상이면 좌우 2열로 나란히 표시)
 
