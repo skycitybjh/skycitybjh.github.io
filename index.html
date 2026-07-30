@@ -16,75 +16,76 @@
      → 번호·논문 수 통계가 자동으로 갱신됩니다 (최신순 정렬 유지)
    · tag: "주저자" | "교신저자" | "단독저자" | "" (공동저자)
    · note: "IN PRESS" 등 추가 뱃지 (없으면 "")
+   · link: "https://doi.org/…" 논문 링크 — 있으면 제목이 클릭됩니다 (없으면 생략 가능)
    · 뉴스: news 배열 맨 위에 추가 / 구성원: people / 과제: projects
    ═══════════════════════════════════════════════════════════════════ */
 window.LAB_DATA = {
 
 pubsInt: [
  {title:"Generative Design of Additively Manufactured Steel Dampers Using a Feasible Geometry-Constrained VAE–GAN", tag:"교신저자", note:"IN PRESS",
-  authors:"J. Bang, S. Kim, S. Park, Y. Kim, <b>J. Bae*</b>, J. Doh", journal:"Journal of Computational Design and Engineering (2026, 게재확정) · Q1"},
+  authors:"J. Bang, S. Kim, S. Park, Y. Kim, <b>J. Bae*</b>, J. Doh", journal:"Journal of Computational Design and Engineering (2026, 게재확정) · Q1", link:"https://doi.org/10.1093/jcde/qwag072"},
  {title:"Deep Learning-Based Prediction of the Hysteretic Behavior of Buckling-Restrained Braces for Seismic Design Using Analysis-of-Mean-Based Optimal Hyperparameters", tag:"교신저자", note:"",
-  authors:"K. Lim, E. Jeong, D.M. Osabel, Y.K. Ju, J. Doh, <b>J. Bae*</b>", journal:"Engineering Applications of Artificial Intelligence 171, 114315 (2026) · Q1 · IF 9.0 · Top 5%"},
+  authors:"K. Lim, E. Jeong, D.M. Osabel, Y.K. Ju, J. Doh, <b>J. Bae*</b>", journal:"Engineering Applications of Artificial Intelligence 171, 114315 (2026) · Q1 · IF 9.0 · Top 5%", link:"https://doi.org/10.1016/j.engappai.2026.114315"},
  {title:"Tailoring Viscoelastic Damping and Magnetic Response in High-Concentration PDMS–Ferrite Iron Magnetorheological Elastomer via Irregular Particle Morphology", tag:"", note:"",
-  authors:"V. Dhand, B. Kim, H. Jang, <b>J. Bae</b>, H. Shin, S. Kim", journal:"Journal of Materials Research and Technology (2026) · Q1 · IF 7.3"},
+  authors:"V. Dhand, B. Kim, H. Jang, <b>J. Bae</b>, H. Shin, S. Kim", journal:"Journal of Materials Research and Technology (2026) · Q1 · IF 7.3", link:"https://doi.org/10.1016/j.jmrt.2026.04.051"},
  {title:"Enhanced Crow Search Algorithm Based on Space Hybridization of Adaptive Functions and Lévy Flight", tag:"교신저자", note:"",
-  authors:"Y. Lan, X. Huang, X. Hu, Z. Zhang, <b>J. Bae*</b>", journal:"International Journal of Computational Intelligence Systems 19(1) (2026)"},
- {title:"State-of-the-Art Artificial Intelligence Techniques in Structural Engineering: A Review of Applications and Prospects", tag:"", note:"",
-  authors:"M.T. Aziz, D.M. Osabel, Y. Kim, S. Kim, <b>J. Bae</b>, K.D. Tsavdaridis", journal:"Results in Engineering, 107882 (2025) · Q1 · IF 9.4"},
+  authors:"Y. Lan, X. Huang, X. Hu, Z. Zhang, <b>J. Bae*</b>", journal:"International Journal of Computational Intelligence Systems 19(1) (2026)", link:"https://doi.org/10.1007/s44196-026-01177-3"},
+ {title:"State-of-the-Art Artificial Intelligence Techniques in Structural Engineering: A Review of Applications and Prospects", tag:"교신저자", note:"",
+  authors:"M.T. Aziz, D.M. Osabel, Y. Kim, S. Kim, <b>J. Bae*</b>, K.D. Tsavdaridis", journal:"Results in Engineering, 107882 (2025) · Q1 · IF 9.4", link:"https://doi.org/10.1016/j.rineng.2025.107882"},
  {title:"Cyclic Loading Test of Phase Change Material (PCM)-Infilled Buckling-Restrained Brace", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, Y.K. Ju, J. Oh", journal:"International Journal of Civil Engineering 22(12), 2233–2249 (2024)"},
+  authors:"<b>J. Bae</b>, Y.K. Ju, J. Oh", journal:"International Journal of Civil Engineering 22(12), 2233–2249 (2024)", link:"https://doi.org/10.1007/s40999-024-00986-x"},
  {title:"Influence of Calcination and Cation Exchange (APTES) of Bentonite-Modified Reinforced Basalt/Epoxy Multiscale Composites' Mechanical and Wear Performance", tag:"", note:"",
-  authors:"S. Khandelwal, V. Dhand, <b>J. Bae</b>, T. Kim, S. Kim", journal:"Materials 17(19), 4760 (2024)"},
+  authors:"S. Khandelwal, V. Dhand, <b>J. Bae</b>, T. Kim, S. Kim", journal:"Materials 17(19), 4760 (2024)", link:"https://doi.org/10.3390/ma17194760"},
  {title:"Advanced Seismic Resilient Performance of Steel MRF Equipped with Viscoelastic Friction Dampers", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, X. Huang, Z. Zhang", journal:"Scientific Reports 14(1), 19403 (2024) · Q1"},
- {title:"Implementation of a Gamification-Based Metaverse Exhibition: A Case Study of the Farewell Museum", tag:"", note:"",
-  authors:"J. Lee, <b>J. Bae</b>, Y. Bae", journal:"Sustainability 16(14), 6212 (2024)"},
+  authors:"<b>J. Bae</b>, X. Huang, Z. Zhang", journal:"Scientific Reports 14(1), 19403 (2024) · Q1", link:"https://doi.org/10.1038/s41598-024-70280-2"},
+ {title:"Implementation of a Gamification-Based Metaverse Exhibition: A Case Study of the Farewell Museum", tag:"교신저자", note:"",
+  authors:"J. Lee, <b>J. Bae*</b>, Y. Bae", journal:"Sustainability 16(14), 6212 (2024)", link:"https://doi.org/10.3390/su16146212"},
  {title:"Experimental Study of a Single-Layer Free-Form Envelope Node Under Axial Loadings", tag:"교신저자", note:"",
-  authors:"J. Oh, <b>J. Bae*</b>", journal:"International Journal of Civil Engineering 22(3), 421–433 (2024)"},
+  authors:"J. Oh, <b>J. Bae*</b>", journal:"International Journal of Civil Engineering 22(3), 421–433 (2024)", link:"https://doi.org/10.1007/s40999-023-00897-3"},
  {title:"Improving the Seismic Performance of Tall Steel Buildings Using Advanced Visco-Plastic Braces", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, Y.J. Kim, C.H. Lee", journal:"International Journal of Steel Structures 22(6), 1658–1668 (2022)"},
+  authors:"<b>J. Bae</b>, Y.J. Kim, C.H. Lee", journal:"International Journal of Steel Structures 22(6), 1658–1668 (2022)", link:"https://doi.org/10.1007/s13296-022-00635-w"},
  {title:"Evaluation of Genetic Algorithms for Optimizing the Height-Wise Viscous Damper Distribution in Regular and Irregular Buildings", tag:"교신저자", note:"",
-  authors:"X. Huang, <b>J. Bae*</b>", journal:"Arabian Journal for Science and Engineering 47(10), 12945–12962 (2022)"},
+  authors:"X. Huang, <b>J. Bae*</b>", journal:"Arabian Journal for Science and Engineering 47(10), 12945–12962 (2022)", link:"https://doi.org/10.1007/s13369-022-06646-3"},
  {title:"Assessment of Concrete Macrocrack Depth Using Infrared Thermography", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, A. Jang, M.J. Park, J. Lee, Y.K. Ju", journal:"Steel and Composite Structures 43(4), 501–509 (2022)"},
+  authors:"<b>J. Bae</b>, A. Jang, M.J. Park, J. Lee, Y.K. Ju", journal:"Steel and Composite Structures 43(4), 501–509 (2022)", link:"https://doi.org/10.12989/scs.2022.43.4.501"},
  {title:"SMART SKY Eye System for Preliminary Structural Safety Assessment of Buildings Using Unmanned Aerial Vehicles", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, J. Lee, A. Jang, Y.K. Ju, M.J. Park", journal:"Sensors 22(7), 2762 (2022)"},
+  authors:"<b>J. Bae</b>, J. Lee, A. Jang, Y.K. Ju, M.J. Park", journal:"Sensors 22(7), 2762 (2022)", link:"https://doi.org/10.3390/s22072762"},
  {title:"Machine Learning-Based Concrete Crack Depth Prediction Using Thermal Images Taken under Daylight Conditions", tag:"", note:"",
-  authors:"M.J. Park, J. Kim, S. Jeong, A. Jang, <b>J. Bae</b>, Y.K. Ju", journal:"Remote Sensing 14(9), 2151 (2022)"},
+  authors:"M.J. Park, J. Kim, S. Jeong, A. Jang, <b>J. Bae</b>, Y.K. Ju", journal:"Remote Sensing 14(9), 2151 (2022)", link:"https://doi.org/10.3390/rs14092151"},
  {title:"Bond Behavior of Concrete-Filled Steel Tube Mega Columns with Different Connectors", tag:"", note:"",
-  authors:"R.W. Alemayehu, <b>J. Bae</b>, Y.K. Ju, M.J. Park", journal:"Materials 15(8), 2791 (2022)"},
+  authors:"R.W. Alemayehu, <b>J. Bae</b>, Y.K. Ju, M.J. Park", journal:"Materials 15(8), 2791 (2022)", link:"https://doi.org/10.3390/ma15082791"},
  {title:"Structural Behavior of a Composite Curtain Wall Fabricated by the Fused Deposition Modeling 3D Printing Method", tag:"", note:"",
-  authors:"M.J. Park, <b>J. Bae</b>, Y.K. Ju", journal:"Polymers 14(7), 1431 (2022)"},
+  authors:"M.J. Park, <b>J. Bae</b>, Y.K. Ju", journal:"Polymers 14(7), 1431 (2022)", link:"https://doi.org/10.3390/polym14071431"},
  {title:"An Innovative Shear Link as Damper: An Experimental and Numerical Study", tag:"교신저자", note:"",
-  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Steel and Composite Structures 42(4), 539–552 (2022)"},
+  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Steel and Composite Structures 42(4), 539–552 (2022)", link:"https://doi.org/10.12989/scs.2022.42.4.539"},
  {title:"Utilizing an I-Shaped Shear Link as a Damper to Improve the Behaviour of a Concentrically Braced Frame", tag:"교신저자", note:"",
-  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Journal of Constructional Steel Research 186, 106915 (2021)"},
+  authors:"A. Ghamari, Y.J. Kim, <b>J. Bae*</b>", journal:"Journal of Constructional Steel Research 186, 106915 (2021)", link:"https://doi.org/10.1016/j.jcsr.2021.106915"},
  {title:"Tapered Reduced Deep Beam Connection for Long Span Steel Moment Frames", tag:"", note:"",
-  authors:"R.W. Alemayehu, S. Jung, <b>J. Bae</b>, C.H. Lee, Y.K. Ju", journal:"Engineering Structures 244, 112731 (2021)"},
- {title:"Seismic Reinforcement System of RC Structure Using Eccentric Brace Frame", tag:"", note:"",
-  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b>", journal:"International Journal of Civil Engineering 19(9), 1021–1042 (2021)"},
+  authors:"R.W. Alemayehu, S. Jung, <b>J. Bae</b>, C.H. Lee, Y.K. Ju", journal:"Engineering Structures 244, 112731 (2021)", link:"https://doi.org/10.1016/j.engstruct.2021.112731"},
+ {title:"Seismic Reinforcement System of RC Structure Using Eccentric Brace Frame", tag:"교신저자", note:"",
+  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae*</b>", journal:"International Journal of Civil Engineering 19(9), 1021–1042 (2021)", link:"https://doi.org/10.1007/s40999-021-00616-w"},
  {title:"Current and New Approaches to Predict the Deflections of One-Way Flexural Members with a Focus on Composite Steel Deck Slabs Voided by Circular Tubes", tag:"", note:"",
-  authors:"C.H. Lee, I. Mansouri, <b>J. Bae</b>, J. Ryu", journal:"Materials 14(2), 421 (2021)"},
+  authors:"C.H. Lee, I. Mansouri, <b>J. Bae</b>, J. Ryu", journal:"Materials 14(2), 421 (2021)", link:"https://doi.org/10.3390/ma14020421"},
  {title:"Modified Low-Cycle Fatigue Estimation Using Machine Learning for Radius-Cut Coke-Shaped Metallic Damper Subjected to Cyclic Loading", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1849–1858 (2020)"},
+  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1849–1858 (2020)", link:"https://doi.org/10.1007/s13296-020-00377-7"},
  {title:"Fire Design Equation for Steel–Polymer Composite Floors in Thermal Fields via Finite Element Analysis", tag:"", note:"",
-  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"Materials 13(23), 5573 (2020)"},
- {title:"The Pushout Test of Seismic Reinforcement System (SRM) Connection that Responds to Earthquake Extensive Level", tag:"", note:"",
-  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae</b>", journal:"International Journal of Civil Engineering 18(12), 1347–1363 (2020)"},
+  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"Materials 13(23), 5573 (2020)", link:"https://doi.org/10.3390/ma13235573"},
+ {title:"The Pushout Test of Seismic Reinforcement System (SRM) Connection that Responds to Earthquake Extensive Level", tag:"교신저자", note:"",
+  authors:"J. Hwang, J. Ock, Y. Kim, J. Mauk, <b>J. Bae*</b>", journal:"International Journal of Civil Engineering 18(12), 1347–1363 (2020)", link:"https://doi.org/10.1007/s40999-020-00544-1"},
  {title:"Fire Resistance of Hybrid Floor Based on Small-Scale Furnace Tests and Energy-Based Time Equivalent Approach", tag:"", note:"",
-  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1811–1821 (2020)"},
+  authors:"M.J. Park, <b>J. Bae</b>, J. Ryu, Y.K. Ju", journal:"International Journal of Steel Structures 20(6), 1811–1821 (2020)", link:"https://doi.org/10.1007/s13296-020-00353-1"},
  {title:"Cyclic Load Test and Finite Element Analysis of NOVEL Buckling-Restrained Brace", tag:"", note:"",
-  authors:"R.W. Alemayehu, Y. Kim, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(22), 5103 (2020)"},
+  authors:"R.W. Alemayehu, Y. Kim, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(22), 5103 (2020)", link:"https://doi.org/10.3390/ma13225103"},
  {title:"Cyclic Loading Performance of Radius-Cut Double Coke-Shaped Strip Dampers", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y. Kim, Y.K. Ju", journal:"Materials 13(18), 3920 (2020)"},
+  authors:"<b>J. Bae</b>, C.H. Lee, M. Park, R.W. Alemayehu, J. Ryu, Y. Kim, Y.K. Ju", journal:"Materials 13(18), 3920 (2020)", link:"https://doi.org/10.3390/ma13183920"},
  {title:"Thermal Contact Conductance-Based Thermal Behavior Analytical Model for a Hybrid Floor at Elevated Temperatures", tag:"", note:"",
-  authors:"M.J. Park, J.K. Min, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(19), 4257 (2020)"},
+  authors:"M.J. Park, J.K. Min, <b>J. Bae</b>, Y.K. Ju", journal:"Materials 13(19), 4257 (2020)", link:"https://doi.org/10.3390/ma13194257"},
  {title:"Seismic Design and Assessment of Steel Frames with Visco-Plastic Dampers", tag:"주저자", note:"",
-  authors:"<b>J. Bae</b>, T.L. Karavasilis", journal:"International Journal of Earthquake and Impact Engineering 2(4), 282–297 (2018)"},
+  authors:"<b>J. Bae</b>, T.L. Karavasilis", journal:"International Journal of Earthquake and Impact Engineering 2(4), 282–297 (2018)", link:"https://doi.org/10.1504/IJEIE.2018.099350"},
  {title:"Experimental Study of Using Cantilever Type Steel Plates for Passive Energy Dissipation", tag:"", note:"",
-  authors:"Y.J. Kim, T.S. Ahn, <b>J.H. Bae</b>, S.H. Oh", journal:"International Journal of Steel Structures 16(3), 959–974 (2016)"},
+  authors:"Y.J. Kim, T.S. Ahn, <b>J.H. Bae</b>, S.H. Oh", journal:"International Journal of Steel Structures 16(3), 959–974 (2016)", link:"https://doi.org/10.1007/s13296-014-0121-6"},
  {title:"Cyclic Loading Test of Wall Damping System with Steel Dampers", tag:"", note:"",
-  authors:"H.J. Ahn, Y.J. Kim, <b>J.H. Bae</b>, I.Y. Jung", journal:"Advances in Structural Engineering 19(8), 1262–1274 (2016)"}
+  authors:"H.J. Ahn, Y.J. Kim, <b>J.H. Bae</b>, I.Y. Jung", journal:"Advances in Structural Engineering 19(8), 1262–1274 (2016)", link:"https://doi.org/10.1177/1369433216642068"}
 ],
 
 pubsDom: [
@@ -109,25 +110,25 @@ pubsDom: [
  {title:"미래교육 시대 메타버스를 활용한 프로젝트 제시형 첨단융합 구조 교육 소개", tag:"단독저자", note:"",
   authors:"<b>배재훈</b>", journal:"한국공간구조학회지 21(4), 4–9 (2021)"},
  {title:"3D 프린터를 활용한 PLA 폴리머 Space Truss의 최적화", tag:"주저자", note:"",
-  authors:"<b>배재훈</b>, 장지우, 주영규", journal:"한국공간구조학회지 20(1), 61–67 (2020)"},
+  authors:"<b>배재훈</b>, 장지우, 주영규", journal:"한국공간구조학회지 20(1), 61–67 (2020)", link:"https://doi.org/10.9712/KASS.2020.20.1.61"},
  {title:"무인 항공기(UAV)와 AI 머신러닝기술을 활용한 구조물의 안전진단 기술 개발", tag:"주저자", note:"",
-  authors:"<b>배재훈</b>, 주영규", journal:"대한토목학회지 68(1), 20–27 (2020)"},
+  authors:"<b>배재훈</b>, 주영규", journal:"대한토목학회지 68(1), 20–27 (2020)", link:"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09284270"},
  {title:"PCM을 충전한 이중강관형 좌굴방지가새 개발", tag:"", note:"",
-  authors:"홍석호, <b>배재훈</b>, 주영규", journal:"복합신소재구조학회지 11(2), 22–28 (2020)"},
+  authors:"홍석호, <b>배재훈</b>, 주영규", journal:"복합신소재구조학회지 11(2), 22–28 (2020)", link:"https://db.koreascholar.com/Article/Detail/395032"},
  {title:"드론 및 열화상을 활용한 구조물 재난 안전 평가 SMART SKY EYE 시스템", tag:"주저자", note:"",
-  authors:"<b>배재훈</b>, 이종훈, 장아름, 주영규", journal:"한국공간구조학회지 19(3), 4–8 (2019)"},
+  authors:"<b>배재훈</b>, 이종훈, 장아름, 주영규", journal:"한국공간구조학회지 19(3), 4–8 (2019)", link:"https://doi.org/10.9712/KASS.2019.19.3.4"},
  {title:"앵글을 전단연결재로 사용하는 합성보의 휨성능", tag:"", note:"",
-  authors:"김영주, <b>배재훈</b>, 안태상, 최종권", journal:"한국강구조학회 논문집 27(1), 63–75 (2015)"},
+  authors:"김영주, <b>배재훈</b>, 안태상, 최종권", journal:"한국강구조학회 논문집 27(1), 63–75 (2015)", link:"https://doi.org/10.7781/kjoss.2015.27.1.063"},
  {title:"중력하중을 받는 SRC기둥–합성보 접합부 실험", tag:"", note:"",
-  authors:"김영주, <b>배재훈</b>, 안태상, 장성훈", journal:"한국강구조학회 논문집 26(5), 441–452 (2014)"},
+  authors:"김영주, <b>배재훈</b>, 안태상, 장성훈", journal:"한국강구조학회 논문집 26(5), 441–452 (2014)", link:"https://doi.org/10.7781/kjoss.2014.26.5.441"},
  {title:"SRC기둥–H형단면과 U형단면으로 구성된 합성보 접합부의 반복가력실험", tag:"", note:"",
-  authors:"김영주, <b>배재훈</b>, 안태상, 김진원, 유홍식", journal:"한국강구조학회 논문집 26(4), 263–275 (2014)"},
+  authors:"김영주, <b>배재훈</b>, 안태상, 김진원, 유홍식", journal:"한국강구조학회 논문집 26(4), 263–275 (2014)", link:"https://doi.org/10.7781/kjoss.2014.26.4.263"},
  {title:"합성보에 적용된 앵글 전단연결재의 Push-out 실험", tag:"", note:"",
-  authors:"김영주, <b>배재훈</b>, 안태상, 장동운", journal:"한국강구조학회 논문집 26(3), 155–167 (2014)"},
+  authors:"김영주, <b>배재훈</b>, 안태상, 장동운", journal:"한국강구조학회 논문집 26(3), 155–167 (2014)", link:"https://doi.org/10.7781/kjoss.2014.26.3.155"},
  {title:"초고층 다이아그리드 노드의 최적설계과정", tag:"", note:"",
-  authors:"김상대, <b>배재훈</b>, 주영규, 김영주, 김도현", journal:"한국강구조학회 논문집 23(2), 211–220 (2011)"},
+  authors:"김상대, <b>배재훈</b>, 주영규, 김영주, 김도현", journal:"한국강구조학회 논문집 23(2), 211–220 (2011)", link:"https://koreascience.kr/article/JAKO201125736636349.page"},
  {title:"초고층 다이아그리드 구조의 실험적 내진성능계수 평가", tag:"주저자", note:"",
-  authors:"<b>배재훈</b>, 주영규, 김영주, 김상대", journal:"한국강구조학회 논문집 22(1), 75–85 (2010)"}
+  authors:"<b>배재훈</b>, 주영규, 김영주, 김상대", journal:"한국강구조학회 논문집 22(1), 75–85 (2010)", link:"https://koreascience.kr/article/JAKO201034060624900.page"}
 ],
 
 books: [
@@ -509,6 +510,9 @@ journals: [
   .pub{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:13px 4px;border-bottom:1px solid var(--line);font-size:14px}
   .pub .no{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--pine);padding-top:3px}
   .pub .t{font-weight:500;text-wrap:pretty}
+  .pub .t a{color:inherit;text-decoration:none}
+  .pub .t a:hover{color:var(--pine);text-decoration:underline}
+  .pub .t a::after{content:"↗";font-size:11px;color:var(--steel);margin-left:4px}
   .pub .a{display:block;font-size:12.5px;color:var(--sub);margin-top:2px}
   .pub .a b{color:var(--ink);font-weight:700}
   .pub .a em{font-style:normal;color:var(--steel)}
@@ -898,7 +902,8 @@ journals: [
       var no = p.no || pad(++seq);
       var tags = (p.tag ? '<span class="pubtag">' + p.tag + '</span>' : '') + (p.note ? '<span class="pubtag">' + p.note + '</span>' : '');
       var auth = p.authors ? p.authors : '';
-      return '<div class="pub"><span class="no">[' + no + ']</span><div class="t">' + p.title + tags +
+      var title = p.link ? '<a href="' + p.link + '" target="_blank" rel="noopener">' + p.title + '</a>' : p.title;
+      return '<div class="pub"><span class="no">[' + no + ']</span><div class="t">' + title + tags +
              '<span class="a">' + auth + '<em>' + p.journal + '</em></span></div></div>';
     }).join("");
     var btn = box.querySelector(".morebtn");
