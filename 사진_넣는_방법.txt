@@ -50,6 +50,11 @@ images\journals\mdpi.jpg              MDPI (Materials·Sensors·Sustainability)
 images\projects\lab-intro.jpg        연구실 소개 포스터 (lab-intro-2, -3 … 으로 최대 8장,
                                       2장 이상이면 좌우 2열로 나란히 표시)
 
+[수상 상장 — Publications 아래 Awards 섹션, 3열 그리드 (세로형 상장 그대로 OK)]
+images\awards\award.jpg              첫 번째 상장 (award-2, award-3 … 으로 최대 24장,
+                                      번호는 빠짐없이 이어서. 한 장도 없으면 Awards
+                                      섹션 자체가 숨겨집니다)
+
 [프로젝트 — 각 과제 카드 아래 핵심 사진, 가로형 권장 (약 800×300 비율)]
 images\projects\pj07.jpg              PJ.07 VM-BRB (자기력 Self-Centering BRB)
 images\projects\pj08.jpg              PJ.08 목조 Hybrid Deck Slab (Steel-Timber OSC)

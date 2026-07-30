@@ -453,10 +453,15 @@ journals: [
   /* 여러 장이면 2열 그리드로 배치 */
   .newsshot:has(img + img), .pjshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:var(--panel)}
   .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:200px;max-height:none;object-fit:cover;border:1px solid var(--line)}
-  /* 연구 소개 포스터 — Projects 상단 대형 표시 (images/projects/lab-intro.jpg, lab-intro-2.png …) */
+  /* 연구 소개 포스터 — About Us 연구분야 카드 아래 대형 표시 (images/projects/lab-intro.jpg, lab-intro-2.jpg …) */
   .pjposter{margin:26px 0 38px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .pjposter img{display:block;width:100%;border:1px solid var(--line);background:var(--panel)}
   @media (max-width:760px){ .pjposter{grid-template-columns:1fr} }
+  /* 상장 — Awards 섹션 3열 그리드 (images/awards/award.jpg, award-2.jpg … 최대 24장) */
+  .awardwall{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .awardwall img{display:block;width:100%;border:1px solid var(--line);background:var(--panel)}
+  @media (max-width:760px){ .awardwall{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .awardwall{grid-template-columns:1fr} }
   .labshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .labshot:has(img + img) figcaption{grid-column:1 / -1}
   .labshot:has(img + img) img{height:260px;max-height:none;object-fit:cover}
@@ -560,6 +565,7 @@ journals: [
     <a href="#people">PEOPLE</a>
     <a href="#projects">PROJECTS</a>
     <a href="#publications">PUBLICATIONS</a>
+    <a href="#awards" hidden>AWARDS</a>
     <a href="#news">NEWS</a>
     <a href="#contact">CONTACT</a>
   </div>
@@ -827,10 +833,20 @@ journals: [
   </div>
 </section>
 
-<!-- ═══════ NEWS ═══════ -->
-<section class="blk alt" id="news">
+<!-- ═══════ AWARDS ═══════ -->
+<section class="blk alt" id="awards" hidden>
   <div class="blk-in">
-    <div class="sheetno reveal">SHEET S-06 · NEWS</div>
+    <div class="sheetno reveal">SHEET S-06 · AWARDS</div>
+    <h2 class="reveal">Awards</h2>
+    <p class="lead reveal" data-en="Awards and honors received by our lab members.">연구실 구성원들이 수상한 상장과 수상 실적입니다.</p>
+    <figure class="awardwall reveal" data-photo="images/awards/award" data-alt="수상 상장" hidden></figure>
+  </div>
+</section>
+
+<!-- ═══════ NEWS ═══════ -->
+<section class="blk" id="news">
+  <div class="blk-in">
+    <div class="sheetno reveal">SHEET S-07 · NEWS</div>
     <h2 class="reveal">News</h2>
     <div class="news reveal">
       <div class="row"><span class="d">2026.07</span><div><h4 data-en="Md Tarif Aziz passes final M.S. thesis defense">Md Tarif Aziz 연구원, 석사학위논문 최종 심사 통과</h4><p data-en="M.S. degree in August 2026 for research on autonomous robotic, deep-learning-based concrete crack inspection.">자율주행 로봇·딥러닝 기반 콘크리트 균열 진단 연구로 2026년 8월 석사학위 취득 예정.</p></div></div>
@@ -848,9 +864,9 @@ journals: [
 </section>
 
 <!-- ═══════ CONTACT ═══════ -->
-<section class="blk" id="contact">
+<section class="blk alt" id="contact">
   <div class="blk-in">
-    <div class="sheetno reveal">SHEET S-07 · CONTACT</div>
+    <div class="sheetno reveal">SHEET S-08 · CONTACT</div>
     <h2 class="reveal">Contact</h2>
     <p class="lead reveal" data-en="We welcome inquiries about graduate admission, joint research, and industry collaboration.">연구실 입학·공동연구·산학협력 문의를 환영합니다.</p>
     <div class="contact-grid reveal">
@@ -1004,19 +1020,29 @@ journals: [
   }
   document.querySelectorAll("[data-photo]").forEach(function(el){
     var base = el.dataset.photo;
-    var multi = el.classList.contains("newsshot") || el.classList.contains("pjshot") || el.classList.contains("labshot") || el.classList.contains("pjposter");
+    var multi = el.classList.contains("newsshot") || el.classList.contains("pjshot") || el.classList.contains("labshot") || el.classList.contains("pjposter") || el.classList.contains("awardwall");
+    var maxN = el.classList.contains("awardwall") ? 24 : 8;
     var cap = el.querySelector("figcaption");
     function put(im){ if (cap) el.insertBefore(im, cap); else el.appendChild(im); }
     attempt(base, function(img){
       if (!img) return;
       img.alt = el.dataset.alt || "";
-      if (el.hasAttribute("hidden")) { el.hidden = false; put(img); }
+      if (el.hasAttribute("hidden")) {
+        el.hidden = false;
+        var sec = el.closest("section[hidden]");
+        if (sec) {
+          sec.hidden = false;
+          var lnk = document.querySelector('nav.top .links a[href="#' + sec.id + '"][hidden]');
+          if (lnk) lnk.hidden = false;
+        }
+        put(img);
+      }
       else if (multi) { put(img); }
       else { img.className = "photo"; el.prepend(img); }
       if (!multi) return;
       var n = 2;
       (function next(){
-        if (n > 8) return;
+        if (n > maxN) return;
         attempt(base + "-" + n, function(im){
           if (!im) return;
           im.alt = "";
