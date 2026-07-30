@@ -46,6 +46,10 @@ images\journals\scs.jpg               Steel and Composite Structures
 images\journals\mdpi.jpg              MDPI (Materials·Sensors·Sustainability)
                                       * 표지가 없으면 저널 약어(ES 등)로 표시됩니다
 
+[연구 소개 포스터 — Projects 섹션 맨 위 대형 표시 (세로형 포스터 그대로 OK)]
+images\projects\lab-intro.jpg        연구실 소개 포스터 (lab-intro-2, -3 … 으로 최대 8장,
+                                      2장 이상이면 좌우 2열로 나란히 표시)
+
 [프로젝트 — 각 과제 카드 아래 핵심 사진, 가로형 권장 (약 800×300 비율)]
 images\projects\pj07.jpg              PJ.07 VM-BRB (자기력 Self-Centering BRB)
 images\projects\pj08.jpg              PJ.08 목조 Hybrid Deck Slab (Steel-Timber OSC)

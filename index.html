@@ -453,6 +453,10 @@ journals: [
   /* 여러 장이면 2열 그리드로 배치 */
   .newsshot:has(img + img), .pjshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:var(--panel)}
   .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:200px;max-height:none;object-fit:cover;border:1px solid var(--line)}
+  /* 연구 소개 포스터 — Projects 상단 대형 표시 (images/projects/lab-intro.jpg, lab-intro-2.png …) */
+  .pjposter{margin:26px 0 38px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .pjposter img{display:block;width:100%;border:1px solid var(--line);background:var(--panel)}
+  @media (max-width:760px){ .pjposter{grid-template-columns:1fr} }
   .labshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .labshot:has(img + img) figcaption{grid-column:1 / -1}
   .labshot:has(img + img) img{height:260px;max-height:none;object-fit:cover}
@@ -683,6 +687,8 @@ journals: [
     <div class="sheetno reveal">SHEET S-04 · RESEARCH PROJECTS</div>
     <h2 class="reveal">Projects</h2>
     <p class="lead reveal" data-en="Major research projects with the National Research Foundation of Korea, Hyundai Steel, the Ministry of SMEs and Startups, academic societies, and industry partners.">한국연구재단·현대제철·중소벤처기업부·학회 및 산업체와 함께 진행 중인 주요 연구과제입니다.</p>
+
+    <figure class="pjposter reveal" data-photo="images/projects/lab-intro" data-alt="ZCSD LAB 연구 소개 포스터" hidden></figure>
 
     <div class="pj hot reveal"><div><span class="no">PJ.07</span><span class="badge">ONGOING</span></div>
       <div><h3 data-en="VM-BRB — Magnetic Self-Centering Lightweight BRB System">VM-BRB — 자기력 Self-Centering 경량 BRB 시스템</h3>
@@ -997,7 +1003,7 @@ journals: [
   }
   document.querySelectorAll("[data-photo]").forEach(function(el){
     var base = el.dataset.photo;
-    var multi = el.classList.contains("newsshot") || el.classList.contains("pjshot") || el.classList.contains("labshot");
+    var multi = el.classList.contains("newsshot") || el.classList.contains("pjshot") || el.classList.contains("labshot") || el.classList.contains("pjposter");
     var cap = el.querySelector("figcaption");
     function put(im){ if (cap) el.insertBefore(im, cap); else el.appendChild(im); }
     attempt(base, function(img){
