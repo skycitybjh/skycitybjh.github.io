@@ -254,6 +254,13 @@ news: [
   en:{title:"Undergraduate Challenge Project presentation", desc:"Proposal for pipe-rack connections in the Yeosu Industrial Complex (Feb 27)."}}
 ],
 
+/* 해외 공동연구 기관 — News 아래 카드로 표시. key는 사진 파일명 (images\partners\key.jpg) */
+partners: [
+ {key:"science-tokyo", abbr:"IST", name:"Institute of Science Tokyo", meta:"JAPAN · 도쿄과학대학", url:"https://www.isct.ac.jp/en/"},
+ {key:"tongji", abbr:"TJU", name:"Tongji University", meta:"CHINA · 동지대학교", url:"https://en.tongji.edu.cn/"},
+ {key:"city", abbr:"CSG", name:"City St George's, University of London", meta:"UK · 시티 세인트조지스 런던대", url:"https://www.citystgeorges.ac.uk/"}
+],
+
 /* 게재 저널 카드 — key는 표지 이미지 파일명 (images\journals\key.jpg), url은 저널 홈페이지 */
 journals: [
  {key:"es", abbr:"ES", name:"Engineering Structures", meta:"ELSEVIER · Q1 · TOP 6%", url:"https://www.sciencedirect.com/journal/engineering-structures"},
@@ -883,6 +890,9 @@ journals: [
       <div class="row"><span class="d">2025.05</span><div><h4 data-en="Prof. Bae wins IStructE Structural Engineering Education Award — first in Korea">배재훈 교수, 영국 IStructE '구조공학 교육 우수상' 한국 최초 수상</h4><p data-en="Award ceremony in London; recognized for education in sustainable structural engineering.">런던 시상식 참석. 지속가능 건축 구조공학 교육 공로.</p></div></div>
       <div class="row"><span class="d">2025</span><div><h4 data-en="Appointed to the Editorial Board of Resilient Cities and Structures">Resilient Cities and Structures 편집위원 선임</h4><p data-en="Q1 international journal published by Elsevier.">Elsevier 발행 Q1 국제학술지.</p></div></div>
     </div>
+
+    <h3 class="subhead reveal" data-en="International Collaboration">International Collaboration · 해외 공동연구</h3>
+    <div class="jgrid reveal" id="partnerGrid"></div>
   </div>
 </section>
 
@@ -1020,6 +1030,16 @@ journals: [
     if (f.en) a.querySelector(".hn-title").dataset.en = f.en.title;
     r3.insertAdjacentElement("afterend", a);
   })();
+
+  // 해외 공동연구 기관 카드 (News 아래) — 사진: images/partners/key.jpg, 카드 전체가 대학 홈페이지 링크
+  var pg2 = document.getElementById("partnerGrid");
+  if (pg2 && D.partners) {
+    pg2.innerHTML = D.partners.map(function(u){
+      return '<a class="jcard" href="' + u.url + '" target="_blank" rel="noopener">' +
+             '<div class="jcover" data-photo="images/partners/' + u.key + '" data-alt="' + u.name + '"><span>' + u.abbr + '</span></div>' +
+             '<div class="jname">' + u.name + '</div><div class="jmeta">' + u.meta + ' ↗</div></a>';
+    }).join("");
+  }
 
   // Journals (표지 이미지: images/journals/key.jpg, 카드 전체가 저널 홈페이지 링크)
   var jg = document.getElementById("jgrid");
