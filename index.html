@@ -480,6 +480,9 @@ journals: [
   .labshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .labshot:has(img + img) figcaption{grid-column:1 / -1}
   .labshot:has(img + img) img{height:260px;max-height:none;object-fit:cover}
+  /* 슬롯 동영상 (파일명-N.mp4) */
+  .pjshot video, .newsshot video, .labshot video{display:block;width:100%;max-height:420px;background:#000}
+  .pjshot:has(img + img) video, .newsshot:has(img + img) video{grid-column:1 / -1}
   .news h4 a{color:var(--pine);text-decoration:none}
   .news h4 a:hover{text-decoration:underline}
   /* 저널 카드 */
@@ -1033,10 +1036,17 @@ journals: [
 // 뉴스·과제·단체사진은 "파일명-2.jpg", "파일명-3.jpg" … 로 여러 장(최대 8장) 자동 표시
 (function(){
   var exts = ["jpg", "png", "jpeg", "webp"];
+  function tryVideo(base, cb){
+    var v = document.createElement("video");
+    v.controls = true; v.muted = true; v.preload = "metadata"; v.playsInline = true;
+    v.onloadedmetadata = function(){ cb(v); };
+    v.onerror = function(){ cb(null); };
+    v.src = base + ".mp4";
+  }
   function attempt(base, cb){
     var i = 0, img = new Image();
     img.onload = function(){ cb(img); };
-    img.onerror = function(){ i++; if (i < exts.length) img.src = base + "." + exts[i]; else cb(null); };
+    img.onerror = function(){ i++; if (i < exts.length) img.src = base + "." + exts[i]; else tryVideo(base, cb); };
     img.src = base + "." + exts[0];
   }
   document.querySelectorAll("[data-photo]").forEach(function(el){
