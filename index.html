@@ -363,13 +363,17 @@ journals: [
     border-bottom:1px solid var(--line);
     background-color:#0d1512;
     background-image:
-      linear-gradient(100deg, rgba(9,17,13,.92) 0%, rgba(9,17,13,.72) 46%, rgba(9,17,13,.42) 100%),
       url("images/hero.jpg"),
       url("https://images.unsplash.com/photo-1658818966033-25ad746b9dc4?auto=format&fit=crop&w=2000&q=80");
-    background-size:cover,cover,cover;
-    background-position:center,center,center 30%;
+    background-size:cover,cover;
+    background-position:center,center 30%;
   }
-  .hero-in{position:relative;max-width:1180px;margin:0 auto}
+  /* 히어로 배경 동영상 — images/hero-video.mp4 가 있으면 재생, 없으면 기존 이미지 유지 */
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, rgba(9,17,13,.92) 0%, rgba(9,17,13,.72) 46%, rgba(9,17,13,.42) 100%)}
+  @media (prefers-reduced-motion: reduce){ .hero-video{display:none} }
+  .hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto}
+  .hero .credit{z-index:2}
   .hero .sheet{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.22em;color:var(--h-acc);margin-bottom:22px}
   .hero h1{
     font-size:clamp(40px,8.4vw,104px);font-weight:900;line-height:.98;letter-spacing:-.015em;text-wrap:balance;
@@ -604,6 +608,9 @@ journals: [
 </nav>
 
 <header class="hero" id="top">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+         onerror="this.remove()" src="images/hero-video.mp4"></video>
+  <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-in">
     <div class="sheet">SHEET S-00 · ZERO CARBON STRUCTURAL DESIGN LAB</div>
     <h1><span class="hollow">ZERO CARBON</span><br><span class="fill">STRUCTURAL<br>DESIGN LAB</span></h1>
@@ -622,7 +629,7 @@ journals: [
       <div class="stat"><b id="statPj">8+</b><span>PROJECTS</span></div>
     </div>
   </div>
-  <span class="credit">PHOTO · 30 ST MARY AXE, LONDON (UNSPLASH)</span>
+  <span class="credit">ZCSD LAB RESEARCH FOOTAGE</span>
 </header>
 
 <!-- ═══════ ABOUT ═══════ -->
