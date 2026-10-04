@@ -1165,9 +1165,13 @@ journals: [
   if (!v) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   window.addEventListener("load", function(){
+    v.muted = true;
+    v.addEventListener("canplay", function(){
+      var p = v.play();
+      if (p && p.catch) p.catch(function(){});
+    }, { once: true });
     v.src = "images/hero-video.mp4";
-    var p = v.play();
-    if (p && p.catch) p.catch(function(){});
+    v.load();
   });
 })();
 
