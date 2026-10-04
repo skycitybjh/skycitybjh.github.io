@@ -19,6 +19,7 @@
    · link: "https://doi.org/…" 논문 링크 — 있으면 제목이 클릭됩니다 (없으면 생략 가능)
    · 뉴스: news 배열 맨 위에 추가 / 구성원: people / 과제: projects
    · 과제 동영상: projects 항목에 video(유튜브 embed URL)·vcapKo·vcapEn 필드 추가 → 카드 하단에 16:9 영상 표시
+   · 외부 자료 이미지 출처: projects 항목에 credit·creditEn 필드 추가 → 사진 아래 작은 글씨로 표시
    ═══════════════════════════════════════════════════════════════════ */
 window.LAB_DATA = {
 
@@ -168,6 +169,8 @@ projects: [
   en:{title:"VM-BRB — Magnetic Self-Centering Lightweight BRB System", meta:"",
       desc:"High-performance 3H-CORE BRB combining magnetic self-centering with lightweight, replaceable 3D-printed modules — a standard seismic retrofit solution for urban remodeling and vertical extension. Testing and certification in progress."}},
  {id:"PJ.08", badge:"ONGOING", hot:true, photo:"pj08",
+  credit:"사례 이미지 출처: 시공·실내 사진 및 합성 단면도 — STRUCTURE magazine, 'Thinking Outside the Wood Box' (structuremag.org) · 모듈 다이어그램 — Loss, Piazza & Zandonini (2016)",
+  creditEn:"Image credits: construction/interior photos & composite section — STRUCTURE magazine, 'Thinking Outside the Wood Box' (structuremag.org) · module diagram — Loss, Piazza & Zandonini (2016)",
   ko:{title:"목조 Hybrid Deck Slab — Steel–Timber OSC 모듈", meta:"CNP DONGYANG · 2026 –",
       desc:"OSC(Off-Site Construction) 공법에 강재–목재 하이브리드 구조(AISC DG37)를 접목한 경량 데크 슬래브·벽체 모듈 개발 및 구조설계. 경량화·탄소저감(LCA)·시공성 동시 달성."},
   en:{title:"Timber Hybrid Deck Slab — Steel–Timber OSC Module", meta:"",
@@ -486,6 +489,8 @@ journals: [
   /* 여러 장이면 2열 그리드로 배치 */
   .newsshot:has(img + img), .pjshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:var(--panel);align-items:start}
   .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:235px;width:100%;max-height:none;object-fit:contain;border:1px solid var(--line);background:#fff}
+  /* 프로젝트 사진 출처 표기 (작게) */
+  .pjcredit{margin-top:6px;font-size:10.5px;color:var(--sub);opacity:.85;letter-spacing:.02em}
   /* 프로젝트 영상 임베드 (YouTube 등) */
   .pjvideo{margin-top:10px;border:1px solid var(--line)}
   .pjvideo iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
@@ -1036,11 +1041,13 @@ journals: [
       card.innerHTML = '<div><span class="no">' + p.id + '</span>' + (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') + '</div>' +
         '<div><h3>' + p.ko.title + '</h3><div class="meta">' + p.ko.meta + '</div><p>' + p.ko.desc + '</p>' +
         '<div class="pjshot" data-photo="images/projects/' + p.photo + '" data-alt="' + p.id + '" hidden></div>' +
+        (p.credit ? '<div class="pjcredit">' + p.credit + '</div>' : '') +
         (p.video ? '<div class="pjvideo"><iframe src="' + p.video + '" title="' + p.id + ' video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + (p.vcapKo ? '<span class="vcap">' + p.vcapKo + '</span>' : '') + '</div>' : '') +
         '</div>';
       if (p.en.title) card.querySelector("h3").dataset.en = p.en.title;
       if (p.en.meta) card.querySelector(".meta").dataset.en = p.en.meta;
       if (p.en.desc) card.querySelector("p").dataset.en = p.en.desc;
+      if (p.creditEn && card.querySelector(".pjcredit")) card.querySelector(".pjcredit").dataset.en = p.creditEn;
       if (p.vcapEn && card.querySelector(".vcap")) card.querySelector(".vcap").dataset.en = p.vcapEn;
       host.appendChild(card);
     });
