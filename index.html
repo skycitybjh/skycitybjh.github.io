@@ -18,6 +18,7 @@
    · note: "IN PRESS" 등 추가 뱃지 (없으면 "")
    · link: "https://doi.org/…" 논문 링크 — 있으면 제목이 클릭됩니다 (없으면 생략 가능)
    · 뉴스: news 배열 맨 위에 추가 / 구성원: people / 과제: projects
+   · 과제 동영상: projects 항목에 video(유튜브 embed URL)·vcapKo·vcapEn 필드 추가 → 카드 하단에 16:9 영상 표시
    ═══════════════════════════════════════════════════════════════════ */
 window.LAB_DATA = {
 
@@ -172,10 +173,13 @@ projects: [
   en:{title:"Timber Hybrid Deck Slab — Steel–Timber OSC Module", meta:"",
       desc:"Lightweight hybrid deck slab and wall modules applying steel–timber composite structures (AISC DG37) to off-site construction — achieving weight reduction, carbon reduction (LCA), and constructability at once."}},
  {id:"PJ.09", badge:"PUBLISHED", hot:true, photo:"pj09",
+  video:"https://www.youtube.com/embed/hjonImN71lM",
+  vcapKo:"영상 © AISC — Rainier Square 타워: SpeedCore vs 현장타설 RC 코어 시공 속도 비교 타임랩스",
+  vcapEn:"Video © AISC — Rainier Square Tower: SpeedCore vs. cast-in-place RC core erection time-lapse",
   ko:{title:"SpeedCore — 충전형 합성강판전단벽 코어 시스템", meta:"한국강구조학회 · 한국건축구조기술사회 · POSCO · 집필간사",
-      desc:"양면 강판 사이에 콘크리트를 충전하는 차세대 초고층 코어 시스템(C-PSW/CF, 미국 AISC 'SpeedCore'). 거푸집·배근 없이 시공해 코어 공기를 획기적으로 단축합니다(시애틀 Rainier Square 58층, 약 10개월 단축). 국내 실무 적용을 위한 「충전형 합성강판전단벽 구조설계 지침」(기문당, 2026.09)을 집필간사로 참여해 발간했습니다 — 구조 거동, 부재·접합부 설계, 내화 설계, 시공 관리까지 다룬 국내 첫 지침서입니다."},
+      desc:"양면 강판 사이에 콘크리트를 충전하는 차세대 초고층 코어 시스템(C-PSW/CF, 미국 AISC 'SpeedCore'). 거푸집·배근 없이 시공해 현장타설 RC 코어 대비 공기를 최대 43% 단축합니다 — 시애틀 Rainier Square 타워(58층·850ft)는 골조를 10개월 만에 세워 공기 8개월을 줄였습니다. 국내 실무 적용을 위한 「충전형 합성강판전단벽 구조설계 지침」(기문당, 2026.09)을 집필간사로 참여해 발간했습니다 — 구조 거동, 부재·접합부 설계, 내화 설계, 시공 관리까지 다룬 국내 첫 지침서입니다."},
   en:{title:"SpeedCore — Concrete-Filled Composite Plate Shear Wall Core System", meta:"KSSC · KSEA · POSCO · Executive Editor",
-      desc:"A next-generation high-rise core system of concrete sandwiched between steel faceplates (C-PSW/CF, branded 'SpeedCore' by AISC) that erects without formwork or rebar — cutting core construction time dramatically (Rainier Square, Seattle: ~10 months saved). Published Korea's first practical design guideline (Kimoondang, Sept 2026) covering structural behavior, member and connection design, fire design, and construction management."}},
+      desc:"A next-generation high-rise core system of concrete sandwiched between steel faceplates (C-PSW/CF, branded 'SpeedCore' by AISC) that erects without formwork or rebar — cutting core erection time by up to 43% versus a cast-in-place RC core. Rainier Square Tower in Seattle (58 stories, 850 ft) was erected in just 10 months, an eight-month saving. Published Korea's first practical design guideline (Kimoondang, Sept 2026) covering structural behavior, member and connection design, fire design, and construction management."}},
  {id:"PJ.10", badge:"2025–26", hot:true, photo:"pj10",
   ko:{title:"AI 생성형 구조설계 — VAE-GAN 기반 3D프린팅 댐퍼", meta:"JCDE (Q1 · TOP 6%) · EAAI (Q1 · TOP 5%) · 2025 – 2026 SCIE",
       desc:"제작 가능성(형상 제약)을 학습한 생성형 AI(VAE-GAN)로 강재 댐퍼 위상을 자동 설계하고, 금속 3D프린팅으로 제작해 반복가력 실험으로 검증. 딥러닝 기반 BRB 이력거동 예측(EAAI), 구조공학 AI 활용 리뷰(Results in Engineering) 등 2025–26년 SCIE 논문으로 발표된 연구입니다."},
@@ -481,7 +485,11 @@ journals: [
   .newsshot img{display:block;width:100%;max-height:260px;object-fit:cover}
   /* 여러 장이면 2열 그리드로 배치 */
   .newsshot:has(img + img), .pjshot:has(img + img){display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:var(--panel);align-items:start}
-  .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:auto;max-height:none;object-fit:contain;border:1px solid var(--line)}
+  .newsshot:has(img + img) img, .pjshot:has(img + img) img{height:235px;width:100%;max-height:none;object-fit:contain;border:1px solid var(--line);background:#fff}
+  /* 프로젝트 영상 임베드 (YouTube 등) */
+  .pjvideo{margin-top:10px;border:1px solid var(--line)}
+  .pjvideo iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+  .pjvideo .vcap{display:block;padding:8px 12px;font-size:11.5px;opacity:.75}
   /* 연구 소개 포스터 — About Us 연구분야 카드 아래 대형 표시 (images/projects/lab-intro.jpg, lab-intro-2.jpg …) */
   .pjposter{margin:26px 0 38px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .pjposter img{display:block;width:100%;border:1px solid var(--line);background:var(--panel)}
@@ -755,11 +763,11 @@ journals: [
       <p data-en="Lightweight hybrid deck slab and wall modules applying steel–timber composite structures (AISC DG37) to off-site construction — achieving weight reduction, carbon reduction (LCA), and constructability at once.">OSC(Off-Site Construction) 공법에 강재–목재 하이브리드 구조(AISC DG37)를 접목한 경량 데크 슬래브·벽체 모듈 개발 및 구조설계. 경량화·탄소저감(LCA)·시공성 동시 달성.</p>
       <div class="pjshot" data-photo="images/projects/pj08" data-alt="목조 Hybrid Deck Slab 프로젝트" hidden></div></div></div>
 
-    <div class="pj hot reveal"><div><span class="no">PJ.09</span><span class="badge">ONGOING</span></div>
-      <div><h3 data-en="Concrete-Filled Composite Steel Plate Shear Wall Design Guideline">충전형 합성강판전단벽 설계지침 개발</h3>
-      <div class="meta" data-en="KSSC · KSEA · 2025 – 2026 · Executive Editor">한국강구조학회 · 한국건축구조기술사회 · 2025 – 2026 · 집필간사</div>
-      <p data-en="Joint society research developing design and construction guidelines for double-skin composite plate shear walls. Final review completed June 2026; publication in preparation.">더블스킨 플레이트 합성벽체의 설계·시공 지침 개발 학회 공동연구. 2026.06 본문 최종 검토 완료, 발간 준비 중.</p>
-      <div class="pjshot" data-photo="images/projects/pj09" data-alt="충전형 합성강판전단벽 지침" hidden></div></div></div>
+    <div class="pj hot reveal"><div><span class="no">PJ.09</span><span class="badge">PUBLISHED</span></div>
+      <div><h3 data-en="SpeedCore — Concrete-Filled Composite Plate Shear Wall Core System">SpeedCore — 충전형 합성강판전단벽 코어 시스템</h3>
+      <div class="meta" data-en="KSSC · KSEA · POSCO · Executive Editor">한국강구조학회 · 한국건축구조기술사회 · POSCO · 집필간사</div>
+      <p data-en="A next-generation high-rise core system (C-PSW/CF, branded 'SpeedCore' by AISC) that erects without formwork or rebar — cutting core erection time by up to 43% versus a cast-in-place RC core. Published Korea's first practical design guideline (Kimoondang, Sept 2026).">양면 강판 사이에 콘크리트를 충전하는 차세대 초고층 코어 시스템(C-PSW/CF, 미국 AISC 'SpeedCore'). 거푸집·배근 없이 시공해 현장타설 RC 코어 대비 공기를 최대 43% 단축. 「충전형 합성강판전단벽 구조설계 지침」(기문당, 2026.09) 집필간사로 참여해 발간.</p>
+      <div class="pjshot" data-photo="images/projects/pj09" data-alt="충전형 합성강판전단벽(SpeedCore) 지침" hidden></div></div></div>
 
     <div class="pj reveal"><div><span class="no">PJ.03</span><span class="badge">NRF</span></div>
       <div><h3 data-en="CNDC — Easy-to-Dismantle Beam–Column Connection System">CNDC — 해체가 쉬운 보-기둥 접합 시스템</h3>
@@ -1027,10 +1035,13 @@ journals: [
       card.className = "pj reveal" + (p.hot ? " hot" : "");
       card.innerHTML = '<div><span class="no">' + p.id + '</span>' + (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') + '</div>' +
         '<div><h3>' + p.ko.title + '</h3><div class="meta">' + p.ko.meta + '</div><p>' + p.ko.desc + '</p>' +
-        '<div class="pjshot" data-photo="images/projects/' + p.photo + '" data-alt="' + p.id + '" hidden></div></div>';
+        '<div class="pjshot" data-photo="images/projects/' + p.photo + '" data-alt="' + p.id + '" hidden></div>' +
+        (p.video ? '<div class="pjvideo"><iframe src="' + p.video + '" title="' + p.id + ' video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + (p.vcapKo ? '<span class="vcap">' + p.vcapKo + '</span>' : '') + '</div>' : '') +
+        '</div>';
       if (p.en.title) card.querySelector("h3").dataset.en = p.en.title;
       if (p.en.meta) card.querySelector(".meta").dataset.en = p.en.meta;
       if (p.en.desc) card.querySelector("p").dataset.en = p.en.desc;
+      if (p.vcapEn && card.querySelector(".vcap")) card.querySelector(".vcap").dataset.en = p.vcapEn;
       host.appendChild(card);
     });
   }
