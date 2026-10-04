@@ -164,17 +164,17 @@ alumni: [
 
 projects: [
  {id:"PJ.07", badge:"ONGOING", hot:true, photo:"pj07",
-  ko:{title:"VM-BRB — 자기력 Self-Centering 경량 BRB 시스템", meta:"HYUNDAI STEEL · KISEC · 2024 – 2026 (2차년도) · PI",
-      desc:"자기력 기반 잔류변형 저감(Self-Centering)과 경량 3D프린팅 모듈 교체형 구조를 결합한 고성능·고효율·고용량 3H-CORE BRB 개발. 도심 리모델링·수직증축 내진보강 표준 솔루션을 목표로 실험·인증 진행 중."},
-  en:{title:"VM-BRB — Magnetic Self-Centering Lightweight BRB System", meta:"",
-      desc:"High-performance 3H-CORE BRB combining magnetic self-centering with lightweight, replaceable 3D-printed modules — a standard seismic retrofit solution for urban remodeling and vertical extension. Testing and certification in progress."}},
+  ko:{title:"VM-BRB — 고성능·고효율·고용량 3H-CORE BRB 시스템", meta:"HYUNDAI STEEL · KISEC · 2024 – 2026 (2차년도) · PI",
+      desc:"점성·자기력(Viscous-Magnetic) 요소와 교체형 3D프린팅 모듈을 결합한 차세대 비좌굴가새(VM-BRB) 개발. 자기 안정화 기반 비접촉 좌굴 구속과 Self-Centering으로 잔류변형을 저감하며, 도심 리모델링·수직증축 내진보강 표준 솔루션을 목표로 실험·인증 진행 중."},
+  en:{title:"VM-BRB — High-Performance 3H-CORE BRB System", meta:"",
+      desc:"A next-generation buckling-restrained brace combining viscous-magnetic elements with replaceable 3D-printed modules. Magnetic stabilization provides non-contact buckling restraint and self-centering to reduce residual drift — a standard seismic retrofit solution for urban remodeling and vertical extension. Testing and certification in progress."}},
  {id:"PJ.08", badge:"ONGOING", hot:true, photo:"pj08",
   credit:"사례 이미지 출처: 시공·실내 사진 및 합성 단면도 — STRUCTURE magazine, 'Thinking Outside the Wood Box' (structuremag.org) · 모듈 다이어그램 — Loss, Piazza & Zandonini (2016)",
   creditEn:"Image credits: construction/interior photos & composite section — STRUCTURE magazine, 'Thinking Outside the Wood Box' (structuremag.org) · module diagram — Loss, Piazza & Zandonini (2016)",
   ko:{title:"목조 Hybrid Deck Slab — Steel–Timber OSC 모듈", meta:"",
-      desc:"OSC(Off-Site Construction) 공법에 강재–목재 하이브리드 구조(AISC DG37)를 접목한 경량 데크 슬래브·벽체 모듈 개발 및 구조설계. 경량화·탄소저감(LCA)·시공성 동시 달성."},
+      desc:"H형강 보와 CLT 건식 바닥을 결합한 강재–목재 합성 바닥 시스템(AISC DG37) 개발. RC 슬래브 대비 40% 이상 경량화와 12–18 m 장경간을 목표로, 해체·재조립(Demountable) 접합 상세와 합성보 휨·진동 성능을 검증하는 데이터센터·OSC 적용형 모듈 연구."},
   en:{title:"Timber Hybrid Deck Slab — Steel–Timber OSC Module", meta:"",
-      desc:"Lightweight hybrid deck slab and wall modules applying steel–timber composite structures (AISC DG37) to off-site construction — achieving weight reduction, carbon reduction (LCA), and constructability at once."}},
+      desc:"A steel–timber composite floor system (AISC DG37) combining steel H-beams with dry CLT decks — targeting 40%+ weight reduction versus RC slabs and 12–18 m long spans, with demountable connection details and verified flexural/vibration performance for data-center and off-site construction modules."}},
  {id:"PJ.09", badge:"PUBLISHED", hot:true, photo:"pj09",
   video:"https://www.youtube.com/embed/hjonImN71lM",
   vcapKo:"영상 © AISC — Rainier Square 타워: SpeedCore vs 현장타설 RC 코어 시공 속도 비교 타임랩스",
@@ -668,62 +668,92 @@ journals: [
       <p data-en="Through international collaborations and industry partnerships, we develop and validate next-generation structural technologies for a net-zero built environment, integrating safety and sustainability into a single design philosophy.">국제 공동연구와 산업 협력을 바탕으로 미래 건축을 위한 탄소중립·고성능 구조기술을 개발하고 실증하며, 안전성과 지속가능성을 하나의 설계 목표로 통합하는 차세대 구조시스템을 제시합니다.</p>
     </div>
     <aside class="about-sketch reveal" aria-hidden="true">
-      <svg viewBox="0 0 440 400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-        <!-- 지반선 + 해칭 -->
-        <path d="M22 344 H 424" stroke-width="1.6"/>
+      <svg viewBox="0 0 440 408" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <!-- 열 그리드 버블 + 중심선 (dash-dot) -->
         <g stroke-width="1" opacity=".55">
-          <path d="M34 344 l-9 11"/><path d="M62 344 l-9 11"/><path d="M90 344 l-9 11"/><path d="M118 344 l-9 11"/>
-          <path d="M146 344 l-9 11"/><path d="M174 344 l-9 11"/><path d="M202 344 l-9 11"/><path d="M230 344 l-9 11"/>
-          <path d="M258 344 l-9 11"/><path d="M286 344 l-9 11"/><path d="M314 344 l-9 11"/><path d="M342 344 l-9 11"/>
-          <path d="M370 344 l-9 11"/><path d="M398 344 l-9 11"/>
+          <path d="M84 38 V 350" stroke-dasharray="12 4 2 4"/>
+          <path d="M204 38 V 350" stroke-dasharray="12 4 2 4"/>
+          <path d="M324 38 V 350" stroke-dasharray="12 4 2 4"/>
         </g>
-        <!-- 골조 (오버슈트된 손그림 선) -->
-        <g stroke-width="1.5">
-          <path d="M84 350 V 128"/><path d="M204 350 V 128"/><path d="M324 350 V 129"/>
-          <path d="M76 132 H 332"/><path d="M77 204 H 331"/><path d="M78 276 H 330"/>
-        </g>
-        <g stroke-width=".8" opacity=".3">
-          <path d="M86 348 V 130"/><path d="M78 206 H 329"/>
-        </g>
-        <!-- X-브레이스 + 교체형 댐퍼 -->
-        <g stroke-width="1.4">
-          <path d="M206 278 L 252 232"/><path d="M276 208 L 322 254"/>
-          <path d="M206 206 L 252 250"/><path d="M276 274 L 322 228"/>
-          <rect x="252" y="228" width="25" height="25"/>
-        </g>
-        <!-- 디테일 콜아웃: 댐퍼 확대 -->
-        <circle cx="264.5" cy="240.5" r="22" stroke-width="1" stroke-dasharray="4 4"/>
-        <path d="M282 226 L 332 112" stroke-width="1" stroke-dasharray="4 4"/>
-        <circle cx="356" cy="76" r="44" stroke-width="1.4"/>
         <g stroke-width="1.1">
-          <path d="M339 62 l9 -5 9 5 v11 l-9 5 -9 -5 z"/>
-          <path d="M357 73 l9 -5 9 5 v11 l-9 5 -9 -5 z"/>
-          <path d="M348 84 l9 -5 9 5 v11 l-9 5 -9 -5 z"/>
+          <circle cx="84" cy="26" r="11"/><circle cx="204" cy="26" r="11"/><circle cx="324" cy="26" r="11"/>
         </g>
-        <circle cx="330" cy="98" r="1.6" fill="currentColor"/><circle cx="382" cy="98" r="1.6" fill="currentColor"/>
-        <circle cx="330" cy="55" r="1.6" fill="currentColor"/><circle cx="382" cy="55" r="1.6" fill="currentColor"/>
-        <text x="356" y="138" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing=".18em" fill="currentColor" stroke="none">REPLACE</text>
-        <!-- 재사용: 인양되는 보 -->
-        <g stroke-width="1.3">
-          <path d="M96 60 l18 -14 18 14" />
-          <path d="M114 46 V 30"/>
-          <path d="M106 34 a8 8 0 1 1 16 0" opacity=".9"/>
-          <path d="M86 66 H 146"/><path d="M86 74 H 146"/><path d="M86 66 V 74"/><path d="M146 66 V 74"/>
+        <g font-family="'IBM Plex Mono',monospace" font-size="10" fill="currentColor" stroke="none" text-anchor="middle">
+          <text x="84" y="29.5">1</text><text x="204" y="29.5">2</text><text x="324" y="29.5">3</text>
         </g>
-        <path d="M116 92 V 118" stroke-width="1" stroke-dasharray="4 4"/>
-        <path d="M112 112 l4 8 4 -8" stroke-width="1"/>
-        <text x="166" y="73" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing=".18em" fill="currentColor" stroke="none">REUSE</text>
-        <!-- 치수선 -->
+        <!-- 골조 -->
+        <g stroke-width="2">
+          <path d="M84 52 V 344"/><path d="M204 52 V 344"/><path d="M324 52 V 344"/>
+          <path d="M84 128 H 324"/><path d="M84 200 H 324"/><path d="M84 272 H 324"/>
+        </g>
+        <!-- 지반선 + 해칭 -->
+        <path d="M56 344 H 352" stroke-width="1.4"/>
+        <g stroke-width=".9" opacity=".6">
+          <path d="M72 344 l-8 9"/><path d="M90 344 l-8 9"/><path d="M108 344 l-8 9"/><path d="M126 344 l-8 9"/>
+          <path d="M144 344 l-8 9"/><path d="M162 344 l-8 9"/><path d="M180 344 l-8 9"/><path d="M198 344 l-8 9"/>
+          <path d="M216 344 l-8 9"/><path d="M234 344 l-8 9"/><path d="M252 344 l-8 9"/><path d="M270 344 l-8 9"/>
+          <path d="M288 344 l-8 9"/><path d="M306 344 l-8 9"/><path d="M324 344 l-8 9"/><path d="M342 344 l-8 9"/>
+        </g>
+        <!-- VM-BRB 브레이스 (포인트 컬러) -->
+        <g stroke="var(--pine)">
+          <path d="M210 269 L 320 206" stroke-width="9" opacity=".18"/>
+          <path d="M206 264.5 L 318 200.5" stroke-width="1.6"/>
+          <path d="M210 271.5 L 322 207.5" stroke-width="1.6"/>
+          <path d="M204 272 L 228 272 L 204 248 Z" stroke-width="1.3"/>
+          <path d="M324 200 L 300 200 L 324 224 Z" stroke-width="1.3"/>
+          <circle cx="264" cy="237" r="17" stroke-width="1.1" stroke-dasharray="4 4"/>
+          <path d="M276 225 L 334 118" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        <!-- DETAIL A : VM-BRB 단면 -->
+        <g stroke="var(--pine)" stroke-width="1.6">
+          <circle cx="356" cy="84" r="46"/>
+        </g>
+        <circle cx="356" cy="38" r="9" stroke-width="1.1"/>
+        <text x="356" y="41.5" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="currentColor" stroke="none">A</text>
+        <g stroke-width="1.4">
+          <rect x="332" y="60" width="48" height="48"/>
+        </g>
         <g stroke-width="1" opacity=".75">
-          <path d="M84 366 V 378"/><path d="M324 366 V 378"/><path d="M84 372 H 324"/>
-          <path d="M84 372 l8 -3 v6 z" fill="currentColor"/><path d="M324 372 l-8 -3 v6 z" fill="currentColor"/>
+          <rect x="339" y="67" width="34" height="34"/>
         </g>
-        <text x="204" y="390" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" letter-spacing=".16em" fill="currentColor" stroke="none" opacity=".85">DESIGN FOR REPLACEMENT &#183; DESIGN FOR REUSE</text>
-        <!-- 타이틀 블록 -->
-        <g stroke-width="1" opacity=".8">
-          <rect x="356" y="306" width="68" height="24"/>
-          <text x="390" y="321" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing=".12em" fill="currentColor" stroke="none">ZCSD&#183;SK-01</text>
+        <rect x="352.5" y="67" width="7" height="34" stroke-width="1.2"/>
+        <rect x="341" y="78" width="9" height="12" stroke="var(--pine)" fill="var(--pine)" fill-opacity=".3" stroke-width="1.1"/>
+        <rect x="362" y="78" width="9" height="12" stroke="var(--pine)" fill="var(--pine)" fill-opacity=".3" stroke-width="1.1"/>
+        <g font-family="'IBM Plex Mono',monospace" font-size="9.5" letter-spacing=".14em" fill="currentColor" stroke="none" text-anchor="middle">
+          <text x="356" y="146">DETAIL A &#183; VM-BRB</text>
+          <text x="356" y="159" opacity=".8">REPLACEABLE DAMPER</text>
         </g>
+        <!-- 해체·재사용 보 (분해도 표기) -->
+        <g stroke-width="1.2" stroke-dasharray="5 4">
+          <rect x="104" y="96" width="80" height="10"/>
+        </g>
+        <g stroke-width="1">
+          <path d="M116 110 V 123"/><path d="M112.5 118 l3.5 6 3.5 -6"/>
+          <path d="M172 110 V 123"/><path d="M168.5 118 l3.5 6 3.5 -6"/>
+        </g>
+        <text x="144" y="88" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" letter-spacing=".16em" fill="currentColor" stroke="none">REUSE</text>
+        <!-- 레벨 기호 -->
+        <g stroke-width=".9" opacity=".8">
+          <path d="M332 128 H 360"/><path d="M348 120 l4 7 4 -7"/>
+          <path d="M352 344 H 368"/><path d="M356 336 l4 7 4 -7"/>
+        </g>
+        <g font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="currentColor" stroke="none" opacity=".8">
+          <text x="364" y="126">RF</text><text x="372" y="342">GL</text>
+        </g>
+        <!-- 치수선 -->
+        <g stroke-width="1" opacity=".85">
+          <path d="M84 352 V 372"/><path d="M204 356 V 372"/><path d="M324 352 V 372"/>
+          <path d="M84 366 H 324"/>
+          <path d="M84 366 l9 -3 v6 z" fill="currentColor"/><path d="M324 366 l-9 -3 v6 z" fill="currentColor"/>
+          <path d="M204 366 l-3 -5 h6 z" fill="currentColor"/>
+        </g>
+        <text x="204" y="382" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing=".1em" fill="currentColor" stroke="none">2 @ 6.0 m</text>
+        <!-- 캡션 + 타이틀블록 -->
+        <text x="138" y="403" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing=".12em" fill="currentColor" stroke="none" opacity=".8">DESIGN FOR REPLACEMENT &#183; REUSE</text>
+        <g stroke-width="1" opacity=".85">
+          <rect x="300" y="390" width="124" height="16"/>
+        </g>
+        <text x="362" y="401" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing=".1em" fill="currentColor" stroke="none">ZCSD LAB &#183; SK-01</text>
       </svg>
     </aside>
     </div>
