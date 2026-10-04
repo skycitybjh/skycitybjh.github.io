@@ -625,8 +625,8 @@ journals: [
 </nav>
 
 <header class="hero" id="top">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
-         onerror="this.remove()" src="images/hero-video.mp4"></video>
+  <video class="hero-video" muted loop playsinline preload="none" poster="images/hero.jpg" aria-hidden="true"
+         onerror="this.remove()"></video>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-in">
     <div class="sheet">SHEET S-00 · ZERO CARBON STRUCTURAL DESIGN LAB</div>
@@ -1156,6 +1156,18 @@ journals: [
         });
       })();
     });
+  });
+})();
+
+// 히어로 동영상 — 페이지 로드 완료 후에 받아서 재생 (첫 화면 버벅임 방지, 포스터가 먼저 표시됨)
+(function(){
+  var v = document.querySelector(".hero-video");
+  if (!v) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.addEventListener("load", function(){
+    v.src = "images/hero-video.mp4";
+    var p = v.play();
+    if (p && p.catch) p.catch(function(){});
   });
 })();
 
